@@ -16,7 +16,7 @@ The [Angular example](./angular/) was built using the `@angular/cli` package:
 
 ```
 npm install -g @angular/cli
-ng new angular
+ng new [NAME]
 ```
 
 ## Vue
@@ -25,5 +25,14 @@ The [Vue.js example](./vue/) was built using the `cli-service-global` package:
 
 ```
 npm install -g @vue/cli
-vue create vue
+vue create [NAME]
 ```
+
+## React
+
+The [example react app](./react/) was created using the `create-react-app` utility:
+
+```
+npx create-react-app [NAME]
+```
+
