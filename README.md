@@ -1,3 +1,29 @@
 # Calcite Components Examples
 
 Working example applications utilizing [calcite-components](https://github.com/Esri/calcite-components). Each folder within this repository is its own mini application demonstrating integration of calcite components with other technologies and tooling.
+
+Most frameworks provide a CLI tool to quickly start up a repo. If available, these tools are used to create the examples to ensure they are colloquial to the framework in question. After a starter project is scaffolded up, calcite-components are installed and some general steps are taken:
+
+1. Include calcite components' loader and define the custom elements
+2. Pull in calcite-components' global CSS file (provides theming variables, etc)
+3. Ensure calcite-components' assets get copied into the project (allows the `calcite-icon` component to work)
+
+This repository will change over time as new best-practices are established and framework integrations are improved.
+
+## Angular
+
+The [Angular example](./angular/) was built using the `@angular/cli` package:
+
+```
+npm install -g @angular/cli
+ng new angular
+```
+
+## Vue
+
+The [Vue.js example](./vue/) was built using the `cli-service-global` package:
+
+```
+npm install -g @vue/cli
+vue create vue
+```

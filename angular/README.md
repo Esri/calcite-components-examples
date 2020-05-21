@@ -2,16 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First, install dependencies with
 
-## Usage with Angular
+```
+npm install
+```
+
+After that, you can run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Calcite Components with Angular
 
 To install the calcite-components in an Angular project, run:
 
 ```
-npm install @esri/calcite-components
+npm install --save @esri/calcite-components
 ```
 
 To use custom components in Angular, you have to tell the module to include the schema for custom elements. Fortunately, Angular makes this pretty easy. Add something like the following to your `app.module.ts` file:
