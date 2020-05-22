@@ -36,3 +36,12 @@ The [example react app](./react/) was created using the `create-react-app` utili
 npx create-react-app [NAME]
 ```
 
+## Ember
+
+The [ember app](./ember/) used the `ember-cli` package to get started:
+
+```
+npm install -g ember-cli
+ember new [NAME]
+```
+
