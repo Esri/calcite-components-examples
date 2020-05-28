@@ -19,7 +19,7 @@ ember serve
 
 This will run the app in the development mode. Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
-## Calcite Components with React
+## Calcite Components with Ember
 
 To install calcite components, first run:
 
