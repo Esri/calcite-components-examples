@@ -19,13 +19,13 @@ npm install -g @angular/cli
 ng new [NAME]
 ```
 
-## Vue
+## Ember
 
-The [Vue.js example](./vue/) was built using the `cli-service-global` package:
+The [ember app](./ember/) used the `ember-cli` package to get started:
 
 ```
-npm install -g @vue/cli
-vue create [NAME]
+npm install -g ember-cli
+ember new [NAME]
 ```
 
 ## React
@@ -36,12 +36,12 @@ The [example react app](./react/) was created using the `create-react-app` utili
 npx create-react-app [NAME]
 ```
 
-## Ember
+## Vue
 
-The [ember app](./ember/) used the `ember-cli` package to get started:
+The [Vue.js example](./vue/) was built using the `cli-service-global` package:
 
 ```
-npm install -g ember-cli
-ember new [NAME]
+npm install -g @vue/cli
+vue create [NAME]
 ```
 
