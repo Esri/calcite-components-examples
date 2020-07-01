@@ -19,13 +19,13 @@ npm install -g @angular/cli
 ng new [NAME]
 ```
 
-## Vue
+## Ember
 
-The [Vue.js example](./vue/) was built using the `cli-service-global` package:
+The [ember app](./ember/) used the `ember-cli` package to get started:
 
 ```
-npm install -g @vue/cli
-vue create [NAME]
+npm install -g ember-cli
+ember new [NAME]
 ```
 
 ## React
@@ -47,12 +47,13 @@ preact create typescript [NAME]
 
 This example also uses TypeScript, and provides additional instructions for getting calcite components to work inside a TypeScript + Preact environment.
 
-## Ember
 
-The [ember app](./ember/) used the `ember-cli` package to get started:
+## Vue
+
+The [Vue.js example](./vue/) was built using the `cli-service-global` package:
 
 ```
-npm install -g ember-cli
-ember new [NAME]
+npm install -g @vue/cli
+vue create [NAME]
 ```
 
