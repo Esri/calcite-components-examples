@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "preact-typescript",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "preact build",
+    "serve": "sirv build --port 8080 --cors --single",
+    "dev": "preact watch",
+    "test": "jest ./tests",
+    "copy": "cp node_modules/@esri/calcite-components/dist/calcite/assets/*.json ./src/assets/"
+  },
+  "dependencies": {
+    "@esri/calcite-components": "^1.0.0-beta.32",
+    "preact": "^10.3.1",
+    "preact-jsx-chai": "^3.0.0",
+    "preact-markup": "^2.0.0",
+    "preact-render-to-string": "^5.1.4",
+    "preact-router": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.1.2",
+    "@types/webpack-env": "^1.15.1",
+    "css-loader": "^1.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-preact-pure": "^2.2.0",
+    "jest": "^25.1.0",
+    "jest-preset-preact": "^1.0.0",
+    "lint-staged": "^10.0.7",
+    "preact-cli": "^3.0.0-next.19",
+    "prettier": "^1.19.1",
+    "sirv-cli": "^1.0.0-next.3",
+    "typescript": "^3.7.5",
+    "typings-for-css-modules-loader": "^1.7.0"
+  }
+}

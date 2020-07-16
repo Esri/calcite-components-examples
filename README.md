@@ -36,6 +36,18 @@ The [example react app](./react/) was created using the `create-react-app` utili
 npx create-react-app [NAME]
 ```
 
+## Preact
+
+The [example preact app](./preact-typescript/) was created using the `preact create` utility:
+
+```
+npm install -g preact-cli
+preact create typescript [NAME]
+```
+
+This example also uses TypeScript, and provides additional instructions for getting calcite components to work inside a TypeScript + Preact environment.
+
+
 ## Vue
 
 The [Vue.js example](./vue/) was built using the `cli-service-global` package:
