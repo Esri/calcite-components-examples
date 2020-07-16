@@ -60,6 +60,6 @@
     "edition": "octane"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.26"
+    "@esri/calcite-components": "^1.0.0-beta.33"
   }
 }
