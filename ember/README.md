@@ -73,7 +73,7 @@ export default {
 };
 ```
 
-This is basically a no-op initializer from an ember standpoint of view. However it allows:
+This is basically a no-op initializer from an ember point of view. However, it allows:
 - to reference `@esri/calcite-components/dist/loader`. It will allow  ember-auto-import to discover the reference and use webpack to build the calcite components into the the app. This is used at build time.
 - define the calcite components inside `window` when the app starts. This is used a runtime.
 
