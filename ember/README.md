@@ -37,7 +37,7 @@ There is a dependency on `ember-auto-import`. With the most recent version of Em
 
 ember-auto-import will automatically import calcite components inside the build when it finds an import reference in your code (see next section).
 
-Most of the time, ember-auto-import is doesn't require configuration. It should just work for calcite-components.
+Most of the time, ember-auto-import doesn't require configuration. It should just work for calcite-components.
 
 #### broccoli-funnel
 broccoli-funnel is used to copy files during the build.
