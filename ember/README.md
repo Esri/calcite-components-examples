@@ -141,9 +141,10 @@ module.exports = function(defaults) {
 };
 ```
 
-### Compatibility with ember-cli-amd and JSAPI
+## Using with JSAPI
 
 You will need to use ember-cli-amd version 3.1.0 or above.
+Long story short, ember-cli-amd allows to build an ember app in an AMD compliant way.
 
 ```ember i ember-cli-amd```
 
