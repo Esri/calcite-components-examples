@@ -57,3 +57,10 @@ npm install -g @vue/cli
 vue create [NAME]
 ```
 
+## Rollup
+
+The [Rollup example](./rollup/) was generated with [rollup-starter-app](https://github.com/rollup/rollup-starter-app):
+
+```
+npx degit "rollup/rollup-starter-app" [NAME]
+```
