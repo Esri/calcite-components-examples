@@ -64,3 +64,7 @@ The [Rollup example](./rollup/) was generated with [rollup-starter-app](https://
 ```
 npx degit "rollup/rollup-starter-app" [NAME]
 ```
+
+## Webpack
+
+The [Webpack example](./webpack/) was built from scratch using Webpack 4.x.
