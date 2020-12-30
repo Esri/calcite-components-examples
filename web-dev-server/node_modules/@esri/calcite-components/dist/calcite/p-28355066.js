@@ -1,0 +1,1 @@
+const t={rtl:"calcite--rtl"};export{t as C}

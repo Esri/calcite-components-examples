@@ -1,0 +1,116 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  margin-bottom: 1px;
+  display: flex;
+  transition: background-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  box-shadow: 0 1px 0 var(--calcite-ui-border-3);
+}
+
+calcite-pick-list-item {
+  box-shadow: none;
+  flex-grow: 1;
+  position: relative;
+  margin: 0;
+}
+
+:host([selected]) {
+  box-shadow: 0 0 0 1px var(--calcite-ui-blue-3);
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--calcite-spacing-third);
+  background-color: transparent;
+  border: none;
+  color: var(--calcite-ui-border-1);
+  line-height: 0;
+  cursor: move;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+}
+
+.handle:hover {
+  background-color: var(--calcite-ui-foreground-2);
+  color: var(--calcite-ui-text-1);
+}
+
+.handle:focus {
+  outline: 2px solid var(--calcite-ui-blue-1);
+  outline-offset: -2px;
+}
+
+.handle--activated {
+  background-color: var(--calcite-ui-foreground-current);
+  color: var(--calcite-ui-text-current);
+}

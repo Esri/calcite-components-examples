@@ -1,0 +1,134 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: block;
+}
+
+:host([open]) {
+  border-bottom: 1px solid var(--calcite-ui-border-3);
+}
+
+:host(:last-child) {
+  border-bottom: none;
+}
+
+.toggle {
+  background-color: transparent;
+  border: none;
+  color: var(--calcite-ui-text-2);
+  font-family: Avenir Next, Avenir, Helvetica Neue, sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.toggle--switch,
+.section-header {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  margin: var(--calcite-spacing-quarter) 0;
+  padding: var(--calcite-spacing-half) 0;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 0.875rem;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+}
+
+.toggle--switch:focus,
+.section-header:focus {
+  outline: 2px solid var(--calcite-ui-blue-1);
+  outline-offset: 2px;
+}
+
+.toggle--switch:hover,
+.section-header:hover {
+  color: var(--calcite-ui-text-1);
+}
+
+.section-header__text {
+  margin: 0 var(--calcite-spacing-quarter);
+}
+
+.toggle--switch {
+  justify-content: space-between;
+}
+
+.toggle--switch calcite-switch {
+  pointer-events: none;
+  margin: 0 0 0 var(--calcite-spacing-half);
+}
+
+.calcite--rtl .toggle--switch calcite-switch {
+  margin-left: 0;
+  margin-right: var(--calcite-spacing-half);
+}

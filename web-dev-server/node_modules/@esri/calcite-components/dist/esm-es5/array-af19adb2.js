@@ -1,0 +1,1 @@
+function getRoundRobinIndex(n,e){return(n+e)%e}export{getRoundRobinIndex as g};

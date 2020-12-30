@@ -1,0 +1,1 @@
+var StatusIcons;(function(a){a["green"]="checkCircle";a["yellow"]="exclamationMarkTriangle";a["red"]="exclamationMarkTriangle";a["blue"]="lightbulb"})(StatusIcons||(StatusIcons={}));export{StatusIcons as S};

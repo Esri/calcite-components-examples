@@ -1,0 +1,212 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: block;
+  --calcite-tip-manager-height: 18vh;
+  --calcite-tip-max-width: 540px;
+}
+
+:host([closed]) {
+  display: none;
+}
+
+/* Shared styles for header elements */
+
+.header {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--calcite-ui-text-2);
+  fill: var(--calcite-ui-text-2);
+}
+
+.heading {
+  padding: 0;
+  margin: 0;
+  font-weight: var(--calcite-ui-text-weight-demi);
+  line-height: 1.5;
+}
+
+.header .heading {
+  flex: 1 0 auto;
+  padding: var(--calcite-spacing-half) var(--calcite-spacing-half);
+}
+
+h1.heading {
+  font-size: 1.25rem;
+}
+
+h2.heading {
+  font-size: 1.125rem;
+}
+
+h3.heading {
+  font-size: 1rem;
+}
+
+h4.heading,
+h5.heading {
+  font-size: 0.875rem;
+}
+
+.header .heading {
+  padding-left: var(--calcite-spacing-half);
+  padding-right: var(--calcite-spacing-half);
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  padding: var(--calcite-spacing-half) var(--calcite-spacing-half) 0;
+  min-height: 150px;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+}
+
+.container:focus {
+  outline: 2px solid var(--calcite-ui-blue-1);
+  outline-offset: 2px;
+}
+
+.tip-container {
+  animation-name: none;
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.215, 0.44, 0.42, 0.88);
+  height: var(--calcite-tip-manager-height);
+  margin-top: var(--calcite-spacing-quarter);
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+}
+
+.tip-container:focus {
+  outline: 2px solid var(--calcite-ui-blue-1);
+  outline-offset: 2px;
+}
+
+::slotted(calcite-tip) {
+  border: none;
+  max-width: var(--calcite-tip-max-width);
+}
+
+.tip-container--advancing {
+  animation-name: tip-advance;
+}
+
+.tip-container--retreating {
+  animation-name: tip-retreat;
+}
+
+/* Pagination Styles*/
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--calcite-spacing-quarter) 0;
+}
+
+.page-position {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 0 var(--calcite-spacing-half);
+}
+
+/* @keyframes*/
+
+@keyframes tip-advance {
+  0% {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0) scale(0.99);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes tip-retreat {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0) scale(0.99);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}

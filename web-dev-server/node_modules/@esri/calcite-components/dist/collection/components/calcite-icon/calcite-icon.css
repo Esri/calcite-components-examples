@@ -1,0 +1,88 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: inline-flex;
+}
+
+:host([scale=s]) {
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
+}
+
+:host([scale=m]) {
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+}
+
+:host([scale=l]) {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.flip-rtl {
+  transform: scaleX(-1);
+}
+
+.svg {
+  display: block;
+}

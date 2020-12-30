@@ -1,0 +1,26 @@
+export declare const CSS: {
+  actions: string;
+  actionsEnd: string;
+  actionsStart: string;
+  description: string;
+  handle: string;
+  handleActivated: string;
+  highlight: string;
+  icon: string;
+  iconDot: string;
+  label: string;
+  remove: string;
+  title: string;
+  textContainer: string;
+};
+export declare const ICONS: {
+  checked: string;
+  remove: string;
+};
+export declare const SLOTS: {
+  actionsEnd: string;
+  actionsStart: string;
+};
+export declare const TEXT: {
+  remove: string;
+};

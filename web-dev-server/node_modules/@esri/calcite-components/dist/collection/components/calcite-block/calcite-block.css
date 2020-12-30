@@ -1,0 +1,270 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  padding: 0;
+  border-bottom: 1px solid var(--calcite-ui-border-3);
+  transition: margin 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
+
+/* Shared styles for header elements */
+
+.header {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--calcite-ui-text-2);
+  fill: var(--calcite-ui-text-2);
+}
+
+.heading {
+  padding: 0;
+  margin: 0;
+  font-weight: var(--calcite-ui-text-weight-demi);
+  line-height: 1.5;
+}
+
+.header .heading {
+  flex: 1 0 auto;
+  padding: var(--calcite-spacing-half) var(--calcite-spacing-half);
+}
+
+h1.heading {
+  font-size: 1.25rem;
+}
+
+h2.heading {
+  font-size: 1.125rem;
+}
+
+h3.heading {
+  font-size: 1rem;
+}
+
+h4.heading,
+h5.heading {
+  font-size: 0.875rem;
+}
+
+.header {
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.header,
+.toggle {
+  grid-area: header;
+}
+
+.header-container {
+  display: grid;
+  grid-template: auto/auto 1fr auto;
+  grid-template-areas: "handle header control";
+  grid-column: header-start/control-end;
+  grid-row: 1/2;
+  align-items: stretch;
+}
+
+.header-container > .header {
+  padding: var(--calcite-spacing-three-quarters) 0;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: var(--calcite-spacing-three-quarters) 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: unset;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+}
+
+.toggle:hover {
+  background-color: var(--calcite-ui-foreground-2);
+}
+
+.toggle:focus {
+  outline: 2px solid var(--calcite-ui-blue-1);
+  outline-offset: -2px;
+}
+
+calcite-loader[inline] {
+  grid-area: control;
+  align-self: center;
+}
+
+calcite-handle {
+  grid-area: handle;
+}
+
+.title {
+  margin: 0;
+  padding: 0 var(--calcite-spacing-three-quarters);
+}
+
+.header .title .heading {
+  padding: 0;
+  color: var(--calcite-ui-text-3);
+  transition: color 150ms ease-in-out;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.summary {
+  color: var(--calcite-ui-text-3);
+  padding: 0;
+  font-size: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.icon {
+  margin-left: var(--calcite-spacing-three-quarters);
+}
+
+.toggle-icon {
+  fill: currentColor;
+  flex: 0 0 var(--calcite-icon-size);
+  margin: 0 var(--calcite-spacing) 0 0;
+}
+
+.content {
+  padding: var(--calcite-spacing-half) var(--calcite-spacing-three-quarters);
+  position: relative;
+}
+
+.control-container {
+  grid-area: control;
+  display: flex;
+  margin: 0;
+}
+
+calcite-scrim {
+  pointer-events: none;
+}
+
+.calcite--rtl .icon {
+  margin-left: 0;
+  margin-right: var(--calcite-spacing-three-quarters);
+}
+
+:host([open]) {
+  margin-top: var(--calcite-spacing);
+  margin-bottom: var(--calcite-spacing);
+  box-shadow: 1px 0 0 var(--calcite-ui-border-1) inset;
+}
+
+:host([open]).calcite--rtl {
+  box-shadow: -1px 0 0 var(--calcite-ui-border-1) inset;
+}
+
+:host([open]) .header .title .heading {
+  color: var(--calcite-ui-text-1);
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+:host([disabled]) .header-container {
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+
+:host([drag-handle]) .title {
+  padding-left: var(--calcite-spacing-quarter);
+}
+
+:host([drag-handle]) .icon {
+  margin-left: 0;
+  margin-right: var(--calcite-spacing-half);
+}
+
+:host([drag-handle]) .calcite--rtl .title {
+  padding-left: 0;
+  padding-right: var(--calcite-spacing-quarter);
+}
+
+:host([drag-handle]) .calcite--rtl .icon {
+  margin-right: 0;
+  margin-left: var(--calcite-spacing-quarter);
+}

@@ -1,0 +1,104 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  z-index: 2;
+  position: relative;
+  display: flex;
+}
+
+.tab-nav {
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px;
+  margin: -4px;
+}
+
+:host([layout=center]) .tab-nav {
+  justify-content: center;
+}
+
+.tab-nav-active-indicator-container {
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.tab-nav-active-indicator {
+  position: absolute;
+  bottom: 0;
+  background: var(--calcite-ui-blue-1);
+  display: block;
+  height: 3px;
+  transition: all ease-out;
+}
+
+:host([position=below]) .tab-nav-active-indicator {
+  bottom: unset;
+  top: 0;
+}
+
+:host([position=below]) .tab-nav-active-indicator-container {
+  bottom: unset;
+  top: 0;
+}

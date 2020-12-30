@@ -1,0 +1,187 @@
+/* mixins & extensions */
+
+@keyframes calcite-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes calcite-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes calcite-fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host([scale=s]) {
+  --calcite-rating-spacing-unit: 0.25rem;
+}
+
+:host {
+  --calcite-rating-spacing-unit: 0.5rem;
+}
+
+:host([scale=l]) {
+  --calcite-rating-spacing-unit: 0.75rem;
+}
+
+:host {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+:host([read-only]) {
+  pointer-events: none;
+}
+
+.fieldset {
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  display: inline-block;
+}
+
+.wrapper {
+  margin-right: var(--calcite-rating-spacing-unit);
+}
+
+:host([dir=rtl]) .wrapper {
+  margin-right: 0;
+  margin-left: var(--calcite-rating-spacing-unit);
+}
+
+.star {
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+  position: relative;
+  display: inline-block;
+  color: var(--calcite-ui-border-1);
+  transition: 150ms ease-in-out;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.star:active {
+  transform: scale(1.1);
+}
+
+.focused {
+  outline: 2px solid var(--calcite-ui-blue-1);
+  outline-offset: 2px;
+}
+
+.average,
+.fraction {
+  color: var(--calcite-ui-yellow-1);
+}
+
+.hovered,
+.selected,
+:host([read-only]) .average,
+:host([read-only]) .fraction {
+  color: var(--calcite-ui-blue-1);
+}
+
+.hovered:not(.selected) {
+  transform: scale(0.9);
+}
+
+:host .fraction {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  transition: 150ms ease-in-out;
+}
+
+:host([dir=rtl]) .fraction {
+  right: 0;
+  left: unset;
+}
+
+calcite-chip {
+  cursor: default;
+  pointer-events: none;
+}
+
+.number--average {
+  font-weight: 700;
+}
+
+.number--count {
+  font-style: italic;
+  color: var(--calcite-ui-text-2);
+}
+
+.number--count:not(:first-child) {
+  margin-left: var(--calcite-rating-spacing-unit);
+}
+
+:host([dir=rtl]) .number--count:not(:first-child) {
+  margin-right: var(--calcite-rating-spacing-unit);
+  margin-left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
