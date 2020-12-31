@@ -1,1 +1,0 @@
-function getKey(r,t){var e={Up:"ArrowUp",Down:"ArrowDown",Left:"ArrowLeft",Right:"ArrowRight",Spacebar:" ",Esc:"Escape"};var o=e[r]||r;var w=t==="rtl";if(w&&o==="ArrowLeft"){return"ArrowRight"}if(w&&o==="ArrowRight"){return"ArrowLeft"}return o}export{getKey as g};

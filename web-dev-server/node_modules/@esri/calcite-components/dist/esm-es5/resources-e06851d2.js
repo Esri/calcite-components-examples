@@ -1,1 +1,0 @@
-var CSS={sticky:"sticky"};var ICON_TYPES;(function(r){r["circle"]="circle";r["square"]="square";r["grip"]="grip"})(ICON_TYPES||(ICON_TYPES={}));export{CSS as C,ICON_TYPES as I};

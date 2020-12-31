@@ -1,1 +1,0 @@
-function n(n,r){return(n+r)%r}export{n as g}

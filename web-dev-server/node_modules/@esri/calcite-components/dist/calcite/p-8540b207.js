@@ -1,1 +1,0 @@
-var a;!function(a){a.green="checkCircle",a.yellow="exclamationMarkTriangle",a.red="exclamationMarkTriangle",a.blue="lightbulb"}(a||(a={}));export{a as S}
