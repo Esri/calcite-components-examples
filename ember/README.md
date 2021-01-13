@@ -96,7 +96,7 @@ module.exports = function(defaults) {
   // Funnel the calcite icons into the build assets directory
   const calciteIconTree = new Funnel('./node_modules/@esri/calcite-components/dist', {
     srcDir: '/',
-    include: ['calcite/assets/*.json'],
+    include: ['calcite/assets/'],
     destDir: '/assets'
   });
 
@@ -131,9 +131,9 @@ module.exports = function(defaults) {
   app.import('node_modules/@esri/calcite-components/dist/calcite/calcite.css');
 
   // Funnel the calcite icons into the build assets directory
-  const calciteIconTree = new Funnel('./node_modules/@esri/calcite-components/dist/calcite/assets', {
+  const calciteIconTree = new Funnel('./node_modules/@esri/calcite-components/dist/', {
     srcDir: '/',
-    include: ['*.json'],
+    include: ['calcite/assets/'],
     destDir: '/assets'
   });
 
@@ -167,7 +167,7 @@ module.exports = function (defaults) {
 
   trees.push(new Funnel('./node_modules/@esri/calcite-components/dist', {
     srcDir: '/',
-    include: ['calcite/assets/*.json'],
+    include: ['calcite/assets/'],
     destDir: '/assets'
   }));
 

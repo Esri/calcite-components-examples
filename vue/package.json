@@ -7,10 +7,10 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "precopy": "mkdir public/assets",
-    "copy": "cp node_modules/@esri/calcite-components/dist/calcite/assets/*.json ./public/assets/"
+    "copy": "cp -R node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.33",
+    "@esri/calcite-components": "~1.0.0-next.73",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
