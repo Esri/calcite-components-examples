@@ -48,9 +48,9 @@ Calcite Components has a single stylesheet which provides CSS variables for colo
 @import "@esri/calcite-components/dist/calcite/calcite.css";
 ```
 
-## Adding the Icons
+## Adding the assets
 
-The icon assets must be copied over to the assets folder manually. A `copy` script has been created to make this process easier:
+There are a few static assets (calendar nls data, icon paths) that must be copied over to the assets folder manually. A `copy` script has been created to make this process easier:
 
 ```
 npm run copy
