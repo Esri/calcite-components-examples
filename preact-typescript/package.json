@@ -8,10 +8,10 @@
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "test": "jest ./tests",
-    "copy": "cp node_modules/@esri/calcite-components/dist/calcite/assets/*.json ./src/assets/"
+    "copy": "cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./src/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.32",
+    "@esri/calcite-components": "1.0.0-beta.49",
     "preact": "^10.3.1",
     "preact-jsx-chai": "^3.0.0",
     "preact-markup": "^2.0.0",
