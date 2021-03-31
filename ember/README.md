@@ -50,7 +50,7 @@ The best place to define the calcite-components is in an initializer.
 
 ```ember g initializer calcite-components```
 
-```
+```js
 import {
   applyPolyfills,
   defineCustomElements
@@ -59,7 +59,7 @@ import {
 // Applying polyfills is only necessary if you support IE11/Edge
 applyPolyfills().then(() => {
   // define calcite components' custom elements on the window
-  // define the resource Url as wellmber
+  // define the resourcesUrl as well
   defineCustomElements(window, {
     resourcesUrl: "assets/calcite/"
   });
@@ -83,7 +83,7 @@ The ember build needs to be updated to import the calcite css and copy in the bu
 
 The `ember-cli-build.js` file needs to be updated to include:
 
-```
+```js
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const { Funnel } = require('broccoli-funnel');
 
@@ -93,28 +93,26 @@ module.exports = function(defaults) {
   // Import the calcite style sheet inside the app css
   app.import('node_modules/@esri/calcite-components/dist/calcite/calcite.css');
 
-  // Funnel the calcite icons into the build assets directory
-  const calciteIconTree = new Funnel('./node_modules/@esri/calcite-components/dist', {
+  // Funnel the static assets into the build assets directory
+  const calciteAssetsTree = new Funnel('./node_modules/@esri/calcite-components/dist', {
     srcDir: '/',
-    include: ['calcite/assets/*.json'],
+    include: ['calcite/assets/*/*'],
     destDir: '/assets'
   });
 
-  return app.toTree([calciteIconTree]);
+  return app.toTree([calciteAssetsTree]);
 };
 ```
 
 ### Using ember-cli-stencil
 
-ember-cli-stencil is interesting but it doesn't allow controlling where the calcite assests are copied in the build.
+ember-cli-stencil is interesting but it doesn't allow controlling where the calcite assets are copied in the build.
 
-More here [ember-cli-stencil](https://github.com/alexlafroscia/ember-cli-stencil). 
+You can read more at [ember-cli-stencil](https://github.com/alexlafroscia/ember-cli-stencil).
 
 After following [their installation instructions](https://github.com/alexlafroscia/ember-cli-stencil#installation) you will need to [configure an ember-auto-import `alias`](https://github.com/ef4/ember-auto-import#customizing-build-behavior).
 
-Note 
-
-```
+```js
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const { Funnel } = require('broccoli-funnel');
 
@@ -130,14 +128,14 @@ module.exports = function(defaults) {
   // Import the calcite style sheet inside the app css
   app.import('node_modules/@esri/calcite-components/dist/calcite/calcite.css');
 
-  // Funnel the calcite icons into the build assets directory
-  const calciteIconTree = new Funnel('./node_modules/@esri/calcite-components/dist/calcite/assets', {
+  // Funnel the calcite assets into the build assets directory
+  const calciteAssetsTree = new Funnel('./node_modules/@esri/calcite-components/dist/calcite/assets', {
     srcDir: '/',
-    include: ['*.json'],
+    include: ['*/*'],
     destDir: '/assets'
   });
 
-  return app.toTree([calciteIconTree]);
+  return app.toTree([calciteAssetsTree]);
 };
 ```
 
@@ -149,7 +147,8 @@ Long story short, ember-cli-amd allows to build an ember app in an AMD compliant
 ```ember i ember-cli-amd```
 
 ember-cli-build.js file without using ember-cli-stencil:
-```
+
+```js
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const { Funnel } = require('broccoli-funnel');
 
@@ -167,7 +166,7 @@ module.exports = function (defaults) {
 
   trees.push(new Funnel('./node_modules/@esri/calcite-components/dist', {
     srcDir: '/',
-    include: ['calcite/assets/*.json'],
+    include: ['calcite/assets/*/*'],
     destDir: '/assets'
   }));
 

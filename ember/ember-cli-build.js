@@ -12,12 +12,12 @@ module.exports = function (defaults) {
   // Import the calcite CSS into the app CSS
   app.import('node_modules/@esri/calcite-components/dist/calcite/calcite.css');
 
-  // Funnel the calcite icon into the build assets directory
-  let calciteIconTree = new Funnel('./node_modules/@esri/calcite-components/dist', {
+  // Funnel the calcite static assets into the build assets directory
+  let calciteAssetsTree = new Funnel('./node_modules/@esri/calcite-components/dist', {
     srcDir: '/',
-    include: ['calcite/assets/*.json'],
+    include: ['calcite/assets/*/*'],
     destDir: '/assets'
   });
 
-  return app.toTree([calciteIconTree]);
+  return app.toTree([calciteAssetsTree]);
 };

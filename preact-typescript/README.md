@@ -39,9 +39,9 @@ The global calcite components CSS can be imported into your `index.js` file as w
 import '@esri/calcite-components/dist/calcite/calcite.css';
 ```
 
-## Adding the icons
+## Adding the assets
 
-The icon assets must be copied over to the assets folder manually. A `copy` script has been created to make this process easier:
+The icon and nls assets must be copied over to the assets folder manually. A `copy` script has been created to make this process easier:
 
 ```
 npm run copy
