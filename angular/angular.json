@@ -21,7 +21,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.json",
+                "input": "./node_modules/@esri/calcite-components/dist/calcite/assets/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.css"
