@@ -50,13 +50,16 @@ Calcite Components has a single stylesheet which provides CSS variables for colo
 
 ## Adding the assets
 
-There are a few static assets (calendar nls data, icon paths) that must be copied over to the assets folder manually. A `copy` script has been created to make this process easier:
+There are a few static assets (calendar nls data, icon paths) used by calcite components. You can add the following to `architect.build.options.assets` in the `angular.json` file to serve these assets directly from the calcite components library in `node_modules`:
 
-```
-npm run copy
+```json
+{
+  "glob": "**/*.json",
+  "input": "./node_modules/@esri/calcite-components/dist/calcite/assets/",
+  "output": "./assets/"
+}
 ```
 
-This will copy the JSON assets required by the icon component to your project's `assets` directory.
 
 ## Edge and IE11 polyfills
 

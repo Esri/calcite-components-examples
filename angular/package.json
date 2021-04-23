@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "copy": "cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./src/assets/"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
