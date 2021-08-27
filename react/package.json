@@ -12,13 +12,16 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "devDependencies": {
+    "ncp": "^2.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precopy": "mkdir -p public/assets/",
-    "copy": "cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/"
+    "postinstall": "npm run copy",
+    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
   },
   "eslintConfig": {
     "extends": "react-app"
