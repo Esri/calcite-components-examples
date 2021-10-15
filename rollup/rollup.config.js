@@ -13,7 +13,11 @@ export default {
   output: [{ dir: 'public', format: 'es' }],
   plugins: [
     resolve(), // tells Rollup how to find node_modules
-    commonjs(), // needed if you're using libraries that leverage commonjs
+    commonjs({
+      exclude: [
+        "node_modules/@esri/calcite-components/dist/custom-elements/index.js"
+      ]
+    }), // needed if you're using libraries that leverage commonjs
     postcss({ // allows us to import the global calcite css
       extensions: ['.css']
     }),
