@@ -21,13 +21,10 @@ npm install --save @esri/calcite-components
 After calcite-components is installed, import the set up the loader in your `src/main.js` file:
 
 ```ts
-import { applyPolyfills, defineCustomElements } from "@esri/calcite-components/dist/loader";
+import { defineCustomElements } from "@esri/calcite-components/dist/loader";
 
-// Apply polyfills and then define the custom elements
-// polyfills are not needed if you don't support IE11 or Edge
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+// define the custom elements
+defineCustomElements(window);
 
 // tell Vue.js to ignore Calcite Components
 Vue.config.ignoredElements = [/calcite-\w*/];

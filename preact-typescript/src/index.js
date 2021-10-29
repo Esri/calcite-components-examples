@@ -1,10 +1,9 @@
 import "./style/index.css";
 import App from "./components/app.tsx";
 import '@esri/calcite-components/dist/calcite/calcite.css';
-import { applyPolyfills, defineCustomElements } from '@esri/calcite-components/dist/loader';
+import { defineCustomElements } from '@esri/calcite-components/dist/loader';
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+// define the custom elements
+defineCustomElements(window);
 
 export default App;

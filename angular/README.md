@@ -59,17 +59,3 @@ There are a few static assets (calendar nls data, icon paths) used by calcite co
   "output": "./assets/"
 }
 ```
-
-
-## Edge and IE11 polyfills
-
-For IE11 and Edge support, you'll need to call the `applyPolyfills()` method prior to defining the elements:
-
-```
-import { applyPolyfills, defineCustomElements } from "@esri/calcite-components/dist/loader";
-// ...
-applyPolyfills().then(() => {
-  defineCustomElements(window)
-})
-```
-

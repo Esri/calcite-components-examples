@@ -21,10 +21,7 @@ npm install --save @esri/calcite-components
 After calcite-components is installed, import the loader in your `src/index.js` file:
 
 ```js
-import {
-  applyPolyfills,
-  defineCustomElements
-} from "@esri/calcite-components/dist/loader";
+import {defineCustomElements} from "@esri/calcite-components/dist/loader";
 ```
 
 ## Adding the CSS
