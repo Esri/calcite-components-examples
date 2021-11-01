@@ -1,4 +1,4 @@
-# Rollup
+# Vite
 
 This repo contains a bare-bones example of how to create an application using Vite and calcite-components. It was generated with [Vite](https://vitejs.dev/).
 
@@ -64,12 +64,11 @@ export default defineConfig({
 		copy({
 			targets: [
 				{
-					src: './node_modules/@esri/calcite-components/dist/calcite/assets',
-					dest: './public'
-				},
-			],
-			hook: 'writeBundle'
-		}),
+					src: 'node_modules/@esri/calcite-components/dist/calcite/assets/',
+					dest: 'public/'
+				}
+			]
+		})
 	]
 })
 ```
