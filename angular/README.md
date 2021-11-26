@@ -35,7 +35,7 @@ To import the custom elements that make up calcite components, import their defi
 
 ```
 // import
-import { defineCustomElements } from "@esri/calcite-compomnents/dist/loader";
+import { defineCustomElements } from "@esri/calcite-components/dist/loader";
 // define the elements, passing in the window
 defineCustomElements(window);
 ```
