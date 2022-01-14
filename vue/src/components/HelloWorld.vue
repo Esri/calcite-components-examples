@@ -14,8 +14,8 @@ import "@esri/calcite-components/dist/components/calcite-date-picker";
 export default {
   name: "HelloWorld",
   props: {
-    msg: String,
-  },
+    msg: String
+  }
 };
 </script>
 
