@@ -1096,38 +1096,26 @@
   "resolved" "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
 
-"@esri/calcite-components-react@^0.1.0":
-  "integrity" "sha512-HGtSpgpHrVWWpuJaGOhqkfr+Nbf+TIyIjaMjpHX6sbC1XUBH3PD1BGzApBK57vko0MkjVV2SieuXDt8NIhEFhg=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.1.0.tgz"
-  "version" "0.1.0"
+"@esri/calcite-components-react@^0.15.0":
+  "integrity" "sha512-OSJsalYh7q7DGaccQ1+b8PEYfzOKWF3Jhcpmgon5waO9OyZquE5+mORdjhVAJLbte1lBxf2q7HuppIIpcfAaFg=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.15.0.tgz"
+  "version" "0.15.0"
   dependencies:
-    "@esri/calcite-components" "~1.0.0-beta.56"
+    "@esri/calcite-components" "^1.0.0-beta.74"
 
-"@esri/calcite-components@~1.0.0-beta.56":
-  "integrity" "sha512-p3p796uJ85IqlFmkEVKmDPZGEdHWFxRilLmz6aS2nVDWx3sAD4oct9FYuV+jT6JWQBDBG/Y4YRgTS+F9SwWlLg=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.56.tgz"
-  "version" "1.0.0-beta.56"
+"@esri/calcite-components@^1.0.0-beta.74":
+  "integrity" "sha512-s/863q7J1LndZTtLGry0YlpOo0qG0eurfh7RcxtygX3eet5xZNTwrloiwFSCGI9dokM9riJB225++8QMp8iNcw=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.74.tgz"
+  "version" "1.0.0-beta.74"
   dependencies:
     "@a11y/focus-trap" "1.0.5"
-    "@popperjs/core" "2.9.2"
-    "@stencil/core" "2.6.0"
-    "@types/color" "3.0.1"
-    "color" "3.1.3"
+    "@popperjs/core" "2.11.1"
+    "@stencil/core" "2.12.1"
+    "@types/color" "3.0.2"
+    "color" "4.1.0"
+    "form-request-submit-polyfill" "2.0.0"
     "lodash-es" "4.17.21"
-    "sortablejs" "1.13.0"
-
-"@esri/calcite-components@1.0.0-beta.50":
-  "integrity" "sha512-+kNYUy38k/BQf8aiXAKZ51v9czhTHEUrRkkmIB0DwZXinK90uTIsl5klKeNPZtpOcfxiMcaxAHzGYB87/ZSRzA=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.50.tgz"
-  "version" "1.0.0-beta.50"
-  dependencies:
-    "@a11y/focus-trap" "1.0.5"
-    "@popperjs/core" "2.6.0"
-    "@stencil/core" "2.4.0"
-    "@types/color" "3.0.1"
-    "color" "3.1.3"
-    "lodash-es" "4.17.20"
-    "sortablejs" "1.13.0"
+    "sortablejs" "1.14.0"
 
 "@hapi/address@2.x.x":
   "integrity" "sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ=="
@@ -1332,30 +1320,22 @@
   "resolved" "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz"
   "version" "1.1.3"
 
-"@popperjs/core@2.6.0":
-  "integrity" "sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.6.0.tgz"
-  "version" "2.6.0"
-
-"@popperjs/core@2.9.2":
-  "integrity" "sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.9.2.tgz"
-  "version" "2.9.2"
+"@popperjs/core@2.11.1":
+  "integrity" "sha512-lfBpADue1tq3+ZLp7E/r8qQB2XWlrml6BuwDzeJ3cNx7h2K1ww5mCs0Vdt9S5EIJHalPifCTt3TFtCTmnQetlA=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.1.tgz"
+  "version" "2.11.1"
+  dependencies:
+    "closure-compiler" "^0.2.12"
 
 "@sheerun/mutationobserver-shim@^0.3.2":
   "integrity" "sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw=="
   "resolved" "https://registry.npmjs.org/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz"
   "version" "0.3.3"
 
-"@stencil/core@2.4.0":
-  "integrity" "sha512-gU6+Yyd6O0KrCSS/O6j8KKqmRo+/Dcs2fI0+APCpbAWK+nqhwDISpdnSEfGDCLMoAC08XOZCycBRk2K1VGnEcg=="
-  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.4.0.tgz"
-  "version" "2.4.0"
-
-"@stencil/core@2.6.0":
-  "integrity" "sha512-QsxWayZyusnqSZrlCl81R71rA3KqFjVVQSH4E0rGN15F1GdQaFonKlHLyCOLKLig1zzC+DQkLLiUuocexuvdeQ=="
-  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.6.0.tgz"
-  "version" "2.6.0"
+"@stencil/core@2.12.1":
+  "integrity" "sha512-u24TZ+FEvjnZt5ZgIkLjLpUNsO6Ml3mUZqwmqk81w6RWWz75hgB5p4RFI5rvuErFeh2xvMIGo+pNdG24XUBz1A=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.12.1.tgz"
+  "version" "2.12.1"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   "integrity" "sha512-j7KnilGyZzYr/jhcrSYS3FGWMZVaqyCG0vzMCwzvei0coIkczuYMcniK07nI0aHJINciujjH11T72ICW5eL5Ig=="
@@ -1547,10 +1527,10 @@
   "resolved" "https://registry.npmjs.org/@types/color-name/-/color-name-1.1.1.tgz"
   "version" "1.1.1"
 
-"@types/color@3.0.1":
-  "integrity" "sha512-oeUWVaAwI+xINDUx+3F2vJkl/vVB03VChFF/Gl3iQCdbcakjuoJyMOba+3BXRtnBhxZ7uBYqQBi9EpLnvSoztA=="
-  "resolved" "https://registry.npmjs.org/@types/color/-/color-3.0.1.tgz"
-  "version" "3.0.1"
+"@types/color@3.0.2":
+  "integrity" "sha512-INiJl6sfNn8iyC5paxVzqiVUEj2boIlFki02uRTAkKwAj++7aAF+ZfEv/XrIeBa0XI/fTZuDHW8rEEcEVnON+Q=="
+  "resolved" "https://registry.npmjs.org/@types/color/-/color-3.0.2.tgz"
+  "version" "3.0.2"
   dependencies:
     "@types/color-convert" "*"
 
@@ -3007,6 +2987,13 @@
     "kind-of" "^6.0.2"
     "shallow-clone" "^3.0.0"
 
+"closure-compiler@^0.2.12":
+  "integrity" "sha1-bDCHytEnQseeR/DOUOh6+Rz44XE="
+  "resolved" "https://registry.npmjs.org/closure-compiler/-/closure-compiler-0.2.12.tgz"
+  "version" "0.2.12"
+  dependencies:
+    "google-closure-compiler" "20150901.x"
+
 "co@^4.6.0":
   "integrity" "sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ="
   "resolved" "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
@@ -3058,21 +3045,29 @@
   "resolved" "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz"
   "version" "1.1.3"
 
-"color-string@^1.5.4":
-  "integrity" "sha512-c/hGS+kRWJutUBEngKKmk4iH3sD59MBkoxVapS/0wgpCz2u7XsNloxknyvBhzwEs1IbV36D9PwqLPJ2DTu3vMA=="
-  "resolved" "https://registry.npmjs.org/color-string/-/color-string-1.6.0.tgz"
-  "version" "1.6.0"
+"color-string@^1.5.4", "color-string@^1.9.0":
+  "integrity" "sha512-9Mrz2AQLefkH1UvASKj6v6hj/7eWgjnT/cVsR8CumieLoT+g900exWeNogqtweI8dxloXN9BDQTYro1oWu/5CQ=="
+  "resolved" "https://registry.npmjs.org/color-string/-/color-string-1.9.0.tgz"
+  "version" "1.9.0"
   dependencies:
     "color-name" "^1.0.0"
     "simple-swizzle" "^0.2.2"
 
-"color@^3.0.0", "color@3.1.3":
+"color@^3.0.0":
   "integrity" "sha512-xgXAcTHa2HeFCGLE9Xs/R82hujGtu9Jd9x4NW3T34+OMs7VoPsjwzRczKHvTAHeJwWFwX5j15+MgAppE8ztObQ=="
   "resolved" "https://registry.npmjs.org/color/-/color-3.1.3.tgz"
   "version" "3.1.3"
   dependencies:
     "color-convert" "^1.9.1"
     "color-string" "^1.5.4"
+
+"color@4.1.0":
+  "integrity" "sha512-o2rkkxyLGgYoeUy1OodXpbPAQNmlNBrirQ8ODO8QutzDiDMNdezSOZLNnusQ6pUpCQJUsaJIo9DZJKqa2HgH7A=="
+  "resolved" "https://registry.npmjs.org/color/-/color-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "color-convert" "^2.0.1"
+    "color-string" "^1.9.0"
 
 "colorette@^1.2.2":
   "integrity" "sha512-MKGMzyfeuutC/ZJ1cba9NqcNpfeqMUcYmyF1ZFY6/Cn7CNSAKx6a+s48sqLqyAiZuaP2TcqMhoo+dlwFnVxT9w=="
@@ -4778,6 +4773,11 @@
     "combined-stream" "^1.0.6"
     "mime-types" "^2.1.12"
 
+"form-request-submit-polyfill@2.0.0":
+  "integrity" "sha512-p0+M92y2gFnP0AuuL8VJ0GYVzAT0bYp3GsSkmPFhvUopdnfDLP/9xplQTBBc4w8qOjKRzdK7GaFcdL9IhlXdTQ=="
+  "resolved" "https://registry.npmjs.org/form-request-submit-polyfill/-/form-request-submit-polyfill-2.0.0.tgz"
+  "version" "2.0.0"
+
 "forwarded@~0.1.2":
   "integrity" "sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ="
   "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.1.2.tgz"
@@ -4984,6 +4984,11 @@
     "ignore" "^3.3.5"
     "pify" "^3.0.0"
     "slash" "^1.0.0"
+
+"google-closure-compiler@20150901.x":
+  "integrity" "sha1-PQHGyt5leQqb+04wshWLdjWsut4="
+  "resolved" "https://registry.npmjs.org/google-closure-compiler/-/google-closure-compiler-20150901.0.0.tgz"
+  "version" "20150901.0.0"
 
 "graceful-fs@^4.1.11", "graceful-fs@^4.1.15", "graceful-fs@^4.1.2", "graceful-fs@^4.1.6", "graceful-fs@^4.2.0", "graceful-fs@^4.2.2":
   "integrity" "sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw=="
@@ -6610,11 +6615,6 @@
   "version" "5.0.0"
   dependencies:
     "p-locate" "^4.1.0"
-
-"lodash-es@4.17.20":
-  "integrity" "sha512-JD1COMZsq8maT6mnuz1UMV0jvYD0E0aUsSOdrr1/nAG3dhqQXwRRgeW0cSqH1U43INKcqxaiVIQNOUDld7gRDA=="
-  "resolved" "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.20.tgz"
-  "version" "4.17.20"
 
 "lodash-es@4.17.21":
   "integrity" "sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw=="
@@ -9738,10 +9738,10 @@
   dependencies:
     "is-plain-obj" "^1.0.0"
 
-"sortablejs@1.13.0":
-  "integrity" "sha512-RBJirPY0spWCrU5yCmWM1eFs/XgX2J5c6b275/YyxFRgnzPhKl/TDeU2hNR8Dt7ITq66NRPM4UlOt+e5O4CFHg=="
-  "resolved" "https://registry.npmjs.org/sortablejs/-/sortablejs-1.13.0.tgz"
-  "version" "1.13.0"
+"sortablejs@1.14.0":
+  "integrity" "sha512-pBXvQCs5/33fdN1/39pPL0NZF20LeRbLQ5jtnheIPN9JQAaufGjKdWduZn4U7wCtVuzKhmRkI0DFYHYRbB2H1w=="
+  "resolved" "https://registry.npmjs.org/sortablejs/-/sortablejs-1.14.0.tgz"
+  "version" "1.14.0"
 
 "source-list-map@^2.0.0":
   "integrity" "sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw=="
