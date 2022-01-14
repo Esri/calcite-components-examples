@@ -1,14 +1,10 @@
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-date-picker";
 import "@esri/calcite-components/dist/calcite/calcite.css";
-import {
-  applyPolyfills,
-  defineCustomElements
-} from "@esri/calcite-components/dist/loader";
+import { setAssetPath } from "@esri/calcite-components/dist/components";
 
-// Apply polyfills and then define the custom elements
-// polyfills are not needed if you don't support IE11 or Edge
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+setAssetPath(location.href);
 
 document.getElementById("test").innerHTML =
-  "<div><calcite-button icon-start='apps'>button</calcite-button></div>";
+  "<div><calcite-date-picker></calcite-date-picker></div>";

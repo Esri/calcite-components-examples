@@ -1,12 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }} <calcite-icon icon="banana"></calcite-icon></h1>
+    <calcite-date-picker></calcite-date-picker>
     <calcite-button>Button</calcite-button>
-    <calcite-icon icon="banana"></calcite-icon>
   </div>
 </template>
 
 <script>
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-date-picker";
+
 export default {
   name: "HelloWorld",
   props: {
@@ -14,3 +18,5 @@ export default {
   }
 };
 </script>
+
+<style src="@esri/calcite-components/dist/calcite/calcite.css"></style>

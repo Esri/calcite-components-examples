@@ -15,5 +15,3 @@ export default {
   }
 };
 </script>
-
-<style src="@esri/calcite-components/dist/calcite/calcite.css"></style>

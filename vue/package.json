@@ -6,11 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "precopy": "mkdir -p public/assets",
-    "copy": "cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/"
+    "postinstall": "npm run copy",
+    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "1.0.0-beta.50",
+    "@esri/calcite-components": "1.0.0-beta.74",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
@@ -23,6 +23,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.2.2",
+    "ncp": "^2.0.0",
     "prettier": "^1.19.1",
     "vue-template-compiler": "^2.6.11"
   }

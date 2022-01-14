@@ -8,10 +8,11 @@
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "test": "jest ./tests",
-    "copy": "cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./src/assets/"
+    "postinstall": "npm run copy",
+    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./src/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "1.0.0-beta.50",
+    "@esri/calcite-components": "1.0.0-beta.74",
     "preact": "^10.3.1",
     "preact-jsx-chai": "^3.0.0",
     "preact-markup": "^2.0.0",
@@ -28,10 +29,14 @@
     "jest": "^25.1.0",
     "jest-preset-preact": "^1.0.0",
     "lint-staged": "^10.0.7",
+    "ncp": "^2.0.0",
     "preact-cli": "^3.0.0-next.19",
     "prettier": "^1.19.1",
     "sirv-cli": "^1.0.0-next.3",
     "typescript": "^3.7.5",
     "typings-for-css-modules-loader": "^1.7.0"
+  },
+  "volta": {
+    "node": "16.13.2"
   }
 }
