@@ -1,5 +1,10 @@
 # Webpack
 
+## Caveats
+
+- `@stencil/webpack` does not work with Webpack 5. We sent in a [pull request](https://github.com/ionic-team/stencil-webpack/pull/9) that should fix it.
+
+
 ## Project setup
 
 To install dependencies, run:
@@ -23,7 +28,7 @@ After calcite-components is installed, import the loader in your `src/index.js` 
 ```js
 import {
   applyPolyfills,
-  defineCustomElements
+  defineCustomElements,
 } from "@esri/calcite-components/dist/loader";
 ```
 
@@ -46,16 +51,18 @@ npm install --save-dev copy-webpack-plugin
 Then import the plugin in your `webpack.config.js` file and call it inside the `plugins` array:
 
 ```js
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   plugins: [
     new CopyPlugin({
-      patterns: [{
-        from: '**',
-        context: 'node_modules/@esri/calcite-components/dist/calcite/',
-        to: './',
-      }]
+      patterns: [
+        {
+          from: "**",
+          context: "node_modules/@esri/calcite-components/dist/calcite/",
+          to: "./",
+        },
+      ],
     }),
   ],
 };
@@ -93,4 +100,3 @@ module.exports = {
 ```
 
 You can see this example projects [webpack.config.js](./webpack.config.js) for a complete config with dev server and html loading.
-
