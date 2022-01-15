@@ -19,35 +19,21 @@ You will also see any lint errors in the console.
 To install calcite components, first run:
 
 ```
-npm install --save @esri/calcite-components @esri/calcite-components-react
+npm install --save @esri/calcite-components-react
 ```
 
-After calcite-components is installed, import the set up the loader in your `index.js` file:
+After calcite-components is installed, import the components you will use in the app as well as the global CSS:
 
 ```
-import { applyPolyfills, defineCustomElements } from '@esri/calcite-components/dist/loader';
-
-// Apply polyfills and then define the custom elements
-// polyfills are not needed if you don't support IE11 or Edge
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
-```
-
-## Adding the CSS
-
-The global calcite components CSS can be added by importing it into your `src/App.js` file:
-
-```
-import '@esri/calcite-components/dist/calcite/calcite.css';
-```
-
-## Adding the components
-
-Then import any components you'd like to use:
-
-```
-import { CalciteAvatar, CalciteButton, CalciteIcon, CalciteSlider } from "@esri/calcite-components-react";
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-slider";
+import {
+  CalciteButton,
+  CalciteIcon,
+  CalciteSlider
+} from "@esri/calcite-components-react";
+import "@esri/calcite-components/dist/calcite/calcite.css";
 ```
 
 ## Adding the assets
@@ -59,7 +45,6 @@ npm run copy
 ```
 
 This will copy the JSON assets required by the icon component to your project's `public/assets` directory.
-
 
 ## Why not just use the web components directly?
 

@@ -22,22 +22,31 @@ npm install --save @esri/calcite-components
 
 To use custom components in Angular, you have to tell the module to include the schema for custom elements. Fortunately, Angular makes this pretty easy. Add something like the following to your `app.module.ts` file:
 
-```
+```ts
+// src/app/app.module.ts
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 @NgModule({
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
-To import the custom elements that make up calcite components, import their definition function from the loader, and call it. Add the following to your `main.ts` file:
+Next, import and call `setAssetPath`:
 
+```ts
+// src/main.ts
+import { setAssetPath } from "@esri/calcite-components/dist/components";
+setAssetPath(location.href);
 ```
-// import
-import { defineCustomElements } from "@esri/calcite-components/dist/loader";
-// define the elements, passing in the window
-defineCustomElements(window);
+
+Now that everything is set up, you can import the components:
+
+```ts
+// src/app/app.component.ts
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-date-picker";
 ```
 
 ## Adding the CSS
@@ -59,17 +68,3 @@ There are a few static assets (calendar nls data, icon paths) used by calcite co
   "output": "./assets/"
 }
 ```
-
-
-## Edge and IE11 polyfills
-
-For IE11 and Edge support, you'll need to call the `applyPolyfills()` method prior to defining the elements:
-
-```
-import { applyPolyfills, defineCustomElements } from "@esri/calcite-components/dist/loader";
-// ...
-applyPolyfills().then(() => {
-  defineCustomElements(window)
-})
-```
-

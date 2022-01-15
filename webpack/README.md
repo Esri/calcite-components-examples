@@ -23,14 +23,19 @@ To install calcite components, first run:
 npm install --save @esri/calcite-components
 ```
 
-After calcite-components is installed, import the loader in your `src/index.js` file:
+After calcite-components is installed, import the components you will use in the app:
 
 ```js
-import {
-  applyPolyfills,
-  defineCustomElements,
-} from "@esri/calcite-components/dist/loader";
+// src/index.js
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-date-picker";
+import { setAssetPath } from "@esri/calcite-components/dist/components";
+
+setAssetPath(location.href);
 ```
+
+Using `setAssetPath` will ensure that calcite components look for assets like icons in the correct location (more on copying assets below).
 
 ## Adding the CSS
 

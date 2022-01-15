@@ -19,27 +19,20 @@ To install calcite components, first run:
 npm install --save @esri/calcite-components
 ```
 
-After calcite-components is installed, import the custom elements bundle and the global CSS in your `main.js` file:
+After calcite-components is installed, import the components you will use in the app as well as the global CSS:
 
 ```js
-import '@esri/calcite-components/dist/calcite/calcite.css';
-import { defineCustomElements, setAssetPath } from '@esri/calcite-components/dist/custom-elements';
+// main.js
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-date-picker";
+import "@esri/calcite-components/dist/calcite/calcite.css";
+import { setAssetPath } from "@esri/calcite-components/dist/components";
 
 setAssetPath(location.href);
-defineCustomElements();
 ```
 
 Using `setAssetPath` will ensure that calcite components look for assets like icons in the correct location (more on copying assets below).
-
-Notice in the above code sample we aren't passing any arguments to `defineCustomElements`. This will define all of the available components. You can also import just what you need by selecting individual icons:
-
-```js
-import { CalciteButton } from '@esri/calcite-components/dist/custom-elements';
-
-customElements.define('calcite-button', CalciteButton);
-```
-
-See Stencil's [custom elements documentation](https://stenciljs.com/docs/custom-elements) for more information.
 
 ## Configuring Vite
 
