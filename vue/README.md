@@ -18,23 +18,24 @@ To install calcite components, first run:
 npm install --save @esri/calcite-components
 ```
 
-After calcite-components is installed, import the set up the loader in your `src/main.js` file:
+After calcite-components is installed, import and call `setAssetPath` and configure the vue app:
 
-```ts
-import { applyPolyfills, defineCustomElements } from "@esri/calcite-components/dist/loader";
-
-// Apply polyfills and then define the custom elements
-// polyfills are not needed if you don't support IE11 or Edge
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+```js
+// src/main.js
+import { setAssetPath } from "@esri/calcite-components/dist/components";
+setAssetPath(location.href);
 
 // tell Vue.js to ignore Calcite Components
 Vue.config.ignoredElements = [/calcite-\w*/];
+Vue.config.productionTip = false;
+```
 
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+Import the calcite components when they are used:
+```js
+// src/components/HellowWorld.vue
+import "@esri/calcite-components/dist/components/calcite-button";
+import "@esri/calcite-components/dist/components/calcite-icon";
+import "@esri/calcite-components/dist/components/calcite-date-picker";
 ```
 
 ## Adding the CSS
