@@ -1103,16 +1103,16 @@
   dependencies:
     "@esri/calcite-components" "^1.0.0-beta.74"
 
-"@esri/calcite-components@^1.0.0-beta.74":
-  "integrity" "sha512-s/863q7J1LndZTtLGry0YlpOo0qG0eurfh7RcxtygX3eet5xZNTwrloiwFSCGI9dokM9riJB225++8QMp8iNcw=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.74.tgz"
-  "version" "1.0.0-beta.74"
+"@esri/calcite-components@^1.0.0-beta.74", "@esri/calcite-components@^1.0.0-beta.75":
+  "integrity" "sha512-Ee0NtOsLGXX3X3ZS8zMmIssqubZNklAVn05Si0oaqsBzemQuLHQRqqZ6PWuKJImiqldoDin60bb+wC8d6mHNpg=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.75.tgz"
+  "version" "1.0.0-beta.75"
   dependencies:
     "@a11y/focus-trap" "1.0.5"
-    "@popperjs/core" "2.11.1"
+    "@popperjs/core" "2.11.2"
     "@stencil/core" "2.12.1"
     "@types/color" "3.0.2"
-    "color" "4.1.0"
+    "color" "4.2.0"
     "form-request-submit-polyfill" "2.0.0"
     "lodash-es" "4.17.21"
     "sortablejs" "1.14.0"
@@ -1320,12 +1320,10 @@
   "resolved" "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz"
   "version" "1.1.3"
 
-"@popperjs/core@2.11.1":
-  "integrity" "sha512-lfBpADue1tq3+ZLp7E/r8qQB2XWlrml6BuwDzeJ3cNx7h2K1ww5mCs0Vdt9S5EIJHalPifCTt3TFtCTmnQetlA=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.1.tgz"
-  "version" "2.11.1"
-  dependencies:
-    "closure-compiler" "^0.2.12"
+"@popperjs/core@2.11.2":
+  "integrity" "sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.2.tgz"
+  "version" "2.11.2"
 
 "@sheerun/mutationobserver-shim@^0.3.2":
   "integrity" "sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw=="
@@ -2987,13 +2985,6 @@
     "kind-of" "^6.0.2"
     "shallow-clone" "^3.0.0"
 
-"closure-compiler@^0.2.12":
-  "integrity" "sha1-bDCHytEnQseeR/DOUOh6+Rz44XE="
-  "resolved" "https://registry.npmjs.org/closure-compiler/-/closure-compiler-0.2.12.tgz"
-  "version" "0.2.12"
-  dependencies:
-    "google-closure-compiler" "20150901.x"
-
 "co@^4.6.0":
   "integrity" "sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ="
   "resolved" "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
@@ -3061,10 +3052,10 @@
     "color-convert" "^1.9.1"
     "color-string" "^1.5.4"
 
-"color@4.1.0":
-  "integrity" "sha512-o2rkkxyLGgYoeUy1OodXpbPAQNmlNBrirQ8ODO8QutzDiDMNdezSOZLNnusQ6pUpCQJUsaJIo9DZJKqa2HgH7A=="
-  "resolved" "https://registry.npmjs.org/color/-/color-4.1.0.tgz"
-  "version" "4.1.0"
+"color@4.2.0":
+  "integrity" "sha512-hHTcrbvEnGjC7WBMk6ibQWFVDgEFTVmjrz2Q5HlU6ltwxv0JJN2Z8I7uRbWeQLF04dikxs8zgyZkazRJvSMtyQ=="
+  "resolved" "https://registry.npmjs.org/color/-/color-4.2.0.tgz"
+  "version" "4.2.0"
   dependencies:
     "color-convert" "^2.0.1"
     "color-string" "^1.9.0"
@@ -4984,11 +4975,6 @@
     "ignore" "^3.3.5"
     "pify" "^3.0.0"
     "slash" "^1.0.0"
-
-"google-closure-compiler@20150901.x":
-  "integrity" "sha1-PQHGyt5leQqb+04wshWLdjWsut4="
-  "resolved" "https://registry.npmjs.org/google-closure-compiler/-/google-closure-compiler-20150901.0.0.tgz"
-  "version" "20150901.0.0"
 
 "graceful-fs@^4.1.11", "graceful-fs@^4.1.15", "graceful-fs@^4.1.2", "graceful-fs@^4.1.6", "graceful-fs@^4.2.0", "graceful-fs@^4.2.2":
   "integrity" "sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw=="
