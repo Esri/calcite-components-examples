@@ -32,7 +32,7 @@ Vue.config.productionTip = false;
 
 Import the calcite components when they are used:
 ```js
-// src/components/HellowWorld.vue
+// src/components/HelloWorld.vue
 import "@esri/calcite-components/dist/components/calcite-button";
 import "@esri/calcite-components/dist/components/calcite-icon";
 import "@esri/calcite-components/dist/components/calcite-date-picker";
