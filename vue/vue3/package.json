@@ -1,0 +1,32 @@
+{
+  "name": "vue3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "postinstall": "npm run copy",
+    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
+  },
+  "dependencies": {
+    "@esri/calcite-components": "1.0.0-beta.75",
+    "core-js": "^3.20.2",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/compiler-sfc": "^3.2.26",
+    "@vue/eslint-config-airbnb": "^5.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-vue": "^7.0.0",
+    "ncp": "^2.0.0"
+  },
+  "volta": {
+    "node": "16.13.2"
+  }
+}
