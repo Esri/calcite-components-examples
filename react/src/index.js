@@ -7,7 +7,6 @@ import { setAssetPath } from "@esri/calcite-components/dist/components";
 
 setAssetPath(window.location.href);
 
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

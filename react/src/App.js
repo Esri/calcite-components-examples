@@ -15,9 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello, React</h1>
+      <h1>Hello, React <CalciteIcon icon="banana" /></h1>
       <CalciteButton>Test</CalciteButton>
-      <CalciteIcon icon="banana" />
       <CalciteSlider
         min="1"
         max="100"
