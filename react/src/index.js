@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { setAssetPath } from "@esri/calcite-components/dist/components";
+
+setAssetPath(window.location.href);
 
 ReactDOM.render(
   <React.StrictMode>
