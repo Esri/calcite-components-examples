@@ -1096,21 +1096,21 @@
   "resolved" "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
 
-"@esri/calcite-components-react@^0.15.0":
-  "integrity" "sha512-OSJsalYh7q7DGaccQ1+b8PEYfzOKWF3Jhcpmgon5waO9OyZquE5+mORdjhVAJLbte1lBxf2q7HuppIIpcfAaFg=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.15.0.tgz"
-  "version" "0.15.0"
+"@esri/calcite-components-react@^0.17.0":
+  "integrity" "sha512-qkrua1Y/tzyy1pbNc1iGRDW1ZHWL6eHwnlM7njv+IbllG5sfuU+uqR5nItpCw6vekvDURcMa5PecL/efvv5DDw=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.17.0.tgz"
+  "version" "0.17.0"
   dependencies:
-    "@esri/calcite-components" "^1.0.0-beta.74"
+    "@esri/calcite-components" "^1.0.0-beta.76"
 
-"@esri/calcite-components@^1.0.0-beta.74", "@esri/calcite-components@^1.0.0-beta.75":
-  "integrity" "sha512-Ee0NtOsLGXX3X3ZS8zMmIssqubZNklAVn05Si0oaqsBzemQuLHQRqqZ6PWuKJImiqldoDin60bb+wC8d6mHNpg=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.75.tgz"
-  "version" "1.0.0-beta.75"
+"@esri/calcite-components@^1.0.0-beta.75", "@esri/calcite-components@^1.0.0-beta.76":
+  "integrity" "sha512-IT4FS2a8sDy54iSP4i+s5DbdgY1MwjSCytw35ql0LDsmt64dCX5iKy8dlHMqTURvJgljfjFkovi/2xsKt0lHHw=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.76.tgz"
+  "version" "1.0.0-beta.76"
   dependencies:
     "@a11y/focus-trap" "1.0.5"
     "@popperjs/core" "2.11.2"
-    "@stencil/core" "2.12.1"
+    "@stencil/core" "2.13.0"
     "@types/color" "3.0.2"
     "color" "4.2.0"
     "form-request-submit-polyfill" "2.0.0"
@@ -1330,10 +1330,10 @@
   "resolved" "https://registry.npmjs.org/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz"
   "version" "0.3.3"
 
-"@stencil/core@2.12.1":
-  "integrity" "sha512-u24TZ+FEvjnZt5ZgIkLjLpUNsO6Ml3mUZqwmqk81w6RWWz75hgB5p4RFI5rvuErFeh2xvMIGo+pNdG24XUBz1A=="
-  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.12.1.tgz"
-  "version" "2.12.1"
+"@stencil/core@2.13.0":
+  "integrity" "sha512-EEKHOHgYpg3/iFUKMXTZJjUayRul7sXDwNw0OGgkEOe4t7JWiibDkzUHuruvpbqEydX+z1+ez5K2bMMY76c2wA=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.13.0.tgz"
+  "version" "2.13.0"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   "integrity" "sha512-j7KnilGyZzYr/jhcrSYS3FGWMZVaqyCG0vzMCwzvei0coIkczuYMcniK07nI0aHJINciujjH11T72ICW5eL5Ig=="

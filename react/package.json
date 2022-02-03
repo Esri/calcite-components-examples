@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@esri/calcite-components": "^1.0.0-beta.75",
-    "@esri/calcite-components-react": "^0.15.0",
+    "@esri/calcite-components-react": "^0.17.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
