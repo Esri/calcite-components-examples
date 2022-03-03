@@ -1,10 +1,5 @@
 # Webpack
 
-## Caveats
-
-- `@stencil/webpack` does not work with Webpack 5. We sent in a [pull request](https://github.com/ionic-team/stencil-webpack/pull/9) that should fix it.
-
-
 ## Project setup
 
 To install dependencies, run:
