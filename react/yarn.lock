@@ -1085,23 +1085,23 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
-"@esri/calcite-components-react@^0.18.0":
-  "integrity" "sha512-WHinSSRlr9M2AOskGzw2V/upixuYVYXnkTZD3iLnNroIcGj1jwbslDXhWa9afrAHz0sR+u4eAjwyDCCtRw1piQ=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.18.0.tgz"
-  "version" "0.18.0"
+"@esri/calcite-components-react@^0.19.0":
+  "integrity" "sha512-d0OFYTxtIsF45x01PJDUP0GXR9gN9L9hZIhc8j2KC6vC0y3FzPbN2qsrgLVVNN3cibWE9uCjFEdGs3lEOJqiBA=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.19.0.tgz"
+  "version" "0.19.0"
   dependencies:
-    "@esri/calcite-components" "^1.0.0-beta.77"
+    "@esri/calcite-components" "1.0.0-beta.78"
 
-"@esri/calcite-components@^1.0.0-beta.77":
-  "integrity" "sha512-fCE9ikXHzUQTHJSMXNYB1/WrPpKtQMUBbaypbbwwxM8y3ifavN0a5ns7NAC+W7uQJA+29fGpAlIMjXr/483eXw=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.77.tgz"
-  "version" "1.0.0-beta.77"
+"@esri/calcite-components@1.0.0-beta.78":
+  "integrity" "sha512-+rL5xnqzOcxDodBYXI+fzUEIjoRTf4NmZs3w/YuEdAuyFjaENkh5CR4liUkRS6g9NBLgGg7S+EJodfvnJJGU1w=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.78.tgz"
+  "version" "1.0.0-beta.78"
   dependencies:
     "@a11y/focus-trap" "1.0.5"
     "@popperjs/core" "2.11.2"
-    "@stencil/core" "2.13.0"
+    "@stencil/core" "2.14.0"
     "@types/color" "3.0.3"
-    "color" "4.2.0"
+    "color" "4.2.1"
     "form-request-submit-polyfill" "2.0.0"
     "lodash-es" "4.17.21"
     "sortablejs" "1.14.0"
@@ -1402,10 +1402,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stencil/core@2.13.0":
-  "integrity" "sha512-EEKHOHgYpg3/iFUKMXTZJjUayRul7sXDwNw0OGgkEOe4t7JWiibDkzUHuruvpbqEydX+z1+ez5K2bMMY76c2wA=="
-  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.13.0.tgz"
-  "version" "2.13.0"
+"@stencil/core@2.14.0":
+  "integrity" "sha512-tiGFK9VADoHJvAZoTHN/c6YBaTzB5+V3aTn7CzjPxIqryjh3jCUlMP4VDvzkrnVWjhj8Fa82zMWdePgr/xoyOw=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.14.0.tgz"
+  "version" "2.14.0"
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   "integrity" "sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ=="
@@ -2909,10 +2909,10 @@
     "color-name" "^1.0.0"
     "simple-swizzle" "^0.2.2"
 
-"color@4.2.0":
-  "integrity" "sha512-hHTcrbvEnGjC7WBMk6ibQWFVDgEFTVmjrz2Q5HlU6ltwxv0JJN2Z8I7uRbWeQLF04dikxs8zgyZkazRJvSMtyQ=="
-  "resolved" "https://registry.npmjs.org/color/-/color-4.2.0.tgz"
-  "version" "4.2.0"
+"color@4.2.1":
+  "integrity" "sha512-MFJr0uY4RvTQUKvPq7dh9grVOTYSFeXja2mBXioCGjnjJoXrAp9jJ1NQTDR73c9nwBSAQiNKloKl5zq9WB9UPw=="
+  "resolved" "https://registry.npmjs.org/color/-/color-4.2.1.tgz"
+  "version" "4.2.1"
   dependencies:
     "color-convert" "^2.0.1"
     "color-string" "^1.9.0"
