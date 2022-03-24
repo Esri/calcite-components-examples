@@ -1085,21 +1085,21 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
-"@esri/calcite-components-react@^0.19.0":
-  "integrity" "sha512-d0OFYTxtIsF45x01PJDUP0GXR9gN9L9hZIhc8j2KC6vC0y3FzPbN2qsrgLVVNN3cibWE9uCjFEdGs3lEOJqiBA=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.19.0.tgz"
-  "version" "0.19.0"
+"@esri/calcite-components-react@^0.21.0":
+  "integrity" "sha512-SZcB3Nvzych0Tlp4yrsBrwjpkoXSkOfVPzwV+u8xGrfydgh71EhYJmPjLWSIDtNh2MZwCc0M6freik1FFP93Kw=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components-react/-/calcite-components-react-0.21.0.tgz"
+  "version" "0.21.0"
   dependencies:
-    "@esri/calcite-components" "1.0.0-beta.78"
+    "@esri/calcite-components" "1.0.0-beta.80"
 
-"@esri/calcite-components@1.0.0-beta.78":
-  "integrity" "sha512-+rL5xnqzOcxDodBYXI+fzUEIjoRTf4NmZs3w/YuEdAuyFjaENkh5CR4liUkRS6g9NBLgGg7S+EJodfvnJJGU1w=="
-  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.78.tgz"
-  "version" "1.0.0-beta.78"
+"@esri/calcite-components@1.0.0-beta.80":
+  "integrity" "sha512-iYhENvgHcuwC8R75s0sVyhG10SXN3FZ3o9pdFXBq9TMi2oKbnzx927rh2hXvE1nBspfLnM6nz41lqFaTKEteog=="
+  "resolved" "https://registry.npmjs.org/@esri/calcite-components/-/calcite-components-1.0.0-beta.80.tgz"
+  "version" "1.0.0-beta.80"
   dependencies:
     "@a11y/focus-trap" "1.0.5"
-    "@popperjs/core" "2.11.2"
-    "@stencil/core" "2.14.0"
+    "@popperjs/core" "2.11.4"
+    "@stencil/core" "2.14.1"
     "@types/color" "3.0.3"
     "color" "4.2.1"
     "form-request-submit-polyfill" "2.0.0"
@@ -1341,10 +1341,10 @@
     "schema-utils" "^3.0.0"
     "source-map" "^0.7.3"
 
-"@popperjs/core@2.11.2":
-  "integrity" "sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.2.tgz"
-  "version" "2.11.2"
+"@popperjs/core@2.11.4":
+  "integrity" "sha512-q/ytXxO5NKvyT37pmisQAItCFqA7FD/vNb8dgaJy3/630Fsc+Mz9/9f2SziBoIZ30TJooXyTwZmhi1zjXmObYg=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.4.tgz"
+  "version" "2.11.4"
 
 "@rollup/plugin-babel@^5.2.0":
   "integrity" "sha512-9uIC8HZOnVLrLHxayq/PTzw+uS25E14KPUBh5ktF+18Mjo5yK0ToMMx6epY0uEgkjwJw0aBW4x2horYXh8juWw=="
@@ -1402,10 +1402,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stencil/core@2.14.0":
-  "integrity" "sha512-tiGFK9VADoHJvAZoTHN/c6YBaTzB5+V3aTn7CzjPxIqryjh3jCUlMP4VDvzkrnVWjhj8Fa82zMWdePgr/xoyOw=="
-  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.14.0.tgz"
-  "version" "2.14.0"
+"@stencil/core@2.14.1":
+  "integrity" "sha512-G58fJeDbi58+7uQnyaGInnehfub9tJikFZ4PkT/FuelMV9wGq2FKB0fxKctKQ3mhhHAiFDuGNzRD1isZZQvUCg=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.14.1.tgz"
+  "version" "2.14.1"
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   "integrity" "sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ=="
