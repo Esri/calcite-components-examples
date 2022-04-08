@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+// Calcite Components
 import "@esri/calcite-components/dist/components/calcite-button";
 import "@esri/calcite-components/dist/components/calcite-icon";
 import "@esri/calcite-components/dist/components/calcite-date-picker";
