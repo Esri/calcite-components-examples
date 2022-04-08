@@ -55,7 +55,7 @@ Allow default imports from modules with no default export. This does not affect 
 
 To enable set the `allowedSyntheticDefaultImports` property to `true` in the `compilerOptions` object.
 
-```json
+```
 // tsconfig.json
   "compilerOptions": {
       ...
@@ -87,7 +87,7 @@ Calcite Components has a single stylesheet which provides CSS variables for colo
 
 There are a few static assets (calendar nls data, icon paths) used by calcite components. You can add the following to `architect.build.options.assets` in the `angular.json` file to serve these assets directly from the calcite components library in `node_modules`:
 
-```json
+```
 // angular.json
 {
   "glob": "**/*.json",
