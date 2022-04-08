@@ -5,9 +5,6 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 // Calcite Components assets
-// import { setAssetPath } from "@esri/calcite-components/dist/components";
-// setAssetPath(location.href);
-
 import { setAssetPath } from "@esri/calcite-components/dist/components";
 setAssetPath(location.href);
 
