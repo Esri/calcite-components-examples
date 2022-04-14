@@ -11,6 +11,6 @@
     "vite": "^2.6.13"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.80"
+    "@esri/calcite-components": "^1.0.0-beta.81"
   }
 }
