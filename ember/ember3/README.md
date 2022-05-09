@@ -1,6 +1,6 @@
-# Ember
+# Ember 3
 
-This is an example of how to use [@esri/calcite-components](https://github.com/Esri/calcite-components/) in an Ember application.
+This is an example of how to use [@esri/calcite-components](https://github.com/Esri/calcite-components/) in an Ember 3 application.
 
 ## Running the Application
 
