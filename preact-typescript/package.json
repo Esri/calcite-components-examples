@@ -12,7 +12,7 @@
     "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./src/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.80",
+    "@esri/calcite-components": "^1.0.0-beta.81",
     "preact": "^10.3.1",
     "preact-jsx-chai": "^3.0.0",
     "preact-markup": "^2.0.0",
