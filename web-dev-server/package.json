@@ -13,6 +13,6 @@
     "@web/dev-server": "^0.1.29"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.81"
+    "@esri/calcite-components": "^1.0.0-beta.82"
   }
 }
