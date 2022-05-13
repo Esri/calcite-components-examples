@@ -1,10 +1,17 @@
-# Ember
+# Ember 3
 
-This is an example of how to use [@esri/calcite-components](https://github.com/Esri/calcite-components/) in an Ember application.
+This is an example of how to use [@esri/calcite-components](https://github.com/Esri/calcite-components/) in an Ember 3 application.
 
 ## Running the Application
 
-First, install dependencies:
+First, ensure you are using Node 14:
+
+```
+nvm install 14
+nvm use 14
+```
+
+Second, install dependencies:
 
 ```
 npm install
@@ -13,7 +20,7 @@ npm install
 After that, start up a dev server with:
 
 ```
-ember serve
+npm start
 ```
 
 This will run the app in the development mode. Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
