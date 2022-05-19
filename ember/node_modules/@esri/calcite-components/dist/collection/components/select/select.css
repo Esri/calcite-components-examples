@@ -1,0 +1,237 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:host {
+  /* Component spacing variables */
+  --calcite-icon-size: 1rem;
+  --calcite-spacing-eighth: 0.125rem;
+  --calcite-spacing-quarter: 0.25rem;
+  --calcite-spacing-half: 0.5rem;
+  --calcite-spacing-three-quarters: 0.75rem;
+  --calcite-spacing: 1rem;
+  --calcite-spacing-plus-quarter: 1.25rem;
+  --calcite-spacing-plus-half: 1.5rem;
+  --calcite-spacing-double: 2rem;
+  --calcite-menu-min-width: 10rem;
+  --calcite-header-min-height: 3rem;
+  --calcite-footer-min-height: 3rem;
+}
+
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+/**
+* CSS Custom Properties
+*
+* These properties can be overridden using the component's tag as selector.
+*
+* @prop --calcite-select-font-size: the font-size of items in the select
+* @prop --calcite-select-spacing: the padding around the selected option text
+*/
+:host {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: var(--select-width);
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}
+
+:host([scale=s]) {
+  height: 1.5rem;
+  --calcite-select-font-size: var(--calcite-font-size--2);
+  --calcite-select-spacing-inline: 0.5rem 2rem;
+}
+:host([scale=s]) .icon-container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+:host([scale=m]) {
+  height: 2rem;
+  --calcite-select-font-size: var(--calcite-font-size--1);
+  --calcite-select-spacing-inline: 0.75rem 2.5rem;
+}
+:host([scale=m]) .icon-container {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+:host([scale=l]) {
+  height: 44px;
+  --calcite-select-font-size: var(--calcite-font-size-0);
+  --calcite-select-spacing-inline: 1rem 3rem;
+}
+:host([scale=l]) .icon-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+:host([width=auto]) {
+  width: auto;
+}
+
+:host([width=half]) {
+  width: 50%;
+}
+
+:host([width=full]) {
+  width: 100%;
+}
+
+.select {
+  margin: 0px;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--calcite-ui-border-input);
+  background-color: var(--calcite-ui-foreground-1);
+  font-family: inherit;
+  color: var(--calcite-ui-text-2);
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+  font-size: var(--calcite-select-font-size);
+  padding-inline: var(--calcite-select-spacing-inline);
+  border-inline-end-width: 0px;
+}
+.select:focus {
+  outline: 2px solid var(--calcite-ui-brand);
+  outline-offset: -2px;
+}
+.select:hover {
+  background-color: var(--calcite-ui-foreground-2);
+}
+
+select:disabled {
+  border-color: var(--calcite-ui-border-input);
+  --tw-bg-opacity: 1;
+}
+
+.icon-container {
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  border-width: 0px;
+  border-style: solid;
+  border-color: var(--calcite-ui-border-input);
+  background-color: transparent;
+  color: var(--calcite-ui-text-2);
+  inset-inline-end: 0px;
+  border-inline-width: 0px 1px;
+}
+
+.select:focus ~ .icon-container {
+  border-color: transparent;
+}
+
+::slotted(input[slot=hidden-form-input]) {
+  bottom: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  outline: none !important;
+  padding: 0 !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  -webkit-appearance: none !important;
+  z-index: -1 !important;
+}

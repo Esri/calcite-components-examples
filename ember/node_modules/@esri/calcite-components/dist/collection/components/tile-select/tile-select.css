@@ -1,0 +1,187 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: block;
+}
+:host .container {
+  background-color: var(--calcite-ui-foreground-1);
+  box-shadow: 0 0 0 1px var(--calcite-ui-border-2);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  position: relative;
+  transition: var(--calcite-animation-timing);
+  vertical-align: top;
+  z-index: 10;
+}
+:host .container.checked {
+  z-index: 30;
+  box-shadow: 0 0 0 1px var(--calcite-ui-brand);
+}
+:host .container.heading-only {
+  align-items: center;
+}
+:host .container:not(.input-enabled) ::slotted(calcite-checkbox), :host .container:not(.input-enabled) ::slotted(calcite-radio-button) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+:host .container.focused:not(.disabled) {
+  z-index: 30;
+}
+:host .container.focused:not(.disabled):not(.input-enabled) {
+  box-shadow: 0 0 0 1px var(--calcite-ui-brand), inset 0 0 0 2px var(--calcite-ui-foreground-1), inset 0 0 0 5px var(--calcite-ui-brand);
+}
+:host .container.input-enabled.input-alignment-start.width-auto.heading-only, :host .container.input-enabled.input-alignment-start.width-auto.icon-only, :host .container.input-enabled.input-alignment-start.width-auto.description-only, :host .container.input-enabled.input-alignment-start.width-auto.heading.description, :host .container.input-enabled.input-alignment-start.width-auto.icon.description, :host .container.input-enabled.input-alignment-start.width-auto.heading.icon.description {
+  display: inline-grid;
+  grid-template-columns: max-content 1fr;
+}
+:host .container.input-enabled.input-alignment-start.heading-only, :host .container.input-enabled.input-alignment-start.icon-only, :host .container.input-enabled.input-alignment-start.description-only, :host .container.input-enabled.input-alignment-start.heading.description, :host .container.input-enabled.input-alignment-start.icon.description, :host .container.input-enabled.input-alignment-start.heading.icon.description {
+  gap: 0.75rem;
+}
+:host .container.input-enabled.input-alignment-start calcite-tile {
+  order: 1;
+}
+:host .container.input-enabled.input-alignment-start.large-visual ::slotted(calcite-checkbox),
+:host .container.input-enabled.input-alignment-start.large-visual ::slotted(calcite-radio-button) {
+  position: absolute;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+}
+:host .container.input-enabled.input-alignment-end.width-auto.heading-only, :host .container.input-enabled.input-alignment-end.width-auto.icon-only {
+  display: inline-grid;
+  grid-gap: 0.75rem;
+  grid-template-columns: max-content 1fr;
+}
+:host .container.input-enabled.input-alignment-end.heading-only, :host .container.input-enabled.input-alignment-end.icon-only {
+  gap: 0.75rem;
+}
+:host .container.input-enabled.input-alignment-end.description-only ::slotted(calcite-checkbox),
+:host .container.input-enabled.input-alignment-end.description-only ::slotted(calcite-radio-button), :host .container.input-enabled.input-alignment-end.heading.description ::slotted(calcite-checkbox),
+:host .container.input-enabled.input-alignment-end.heading.description ::slotted(calcite-radio-button), :host .container.input-enabled.input-alignment-end.icon.description ::slotted(calcite-checkbox),
+:host .container.input-enabled.input-alignment-end.icon.description ::slotted(calcite-radio-button), :host .container.input-enabled.input-alignment-end.heading.icon.description ::slotted(calcite-checkbox),
+:host .container.input-enabled.input-alignment-end.heading.icon.description ::slotted(calcite-radio-button) {
+  position: absolute;
+  inset-block-start: 0.75rem;
+  inset-inline-end: 0.75rem;
+}
+:host .container.input-enabled.input-alignment-end.large-visual ::slotted(calcite-checkbox),
+:host .container.input-enabled.input-alignment-end.large-visual ::slotted(calcite-radio-button) {
+  position: absolute;
+  inset-block-start: 0.75rem;
+  inset-inline-end: 0.75rem;
+}
+:host .container.width-full {
+  display: flex;
+  max-width: none;
+}
+:host .container.width-full calcite-tile {
+  flex: 1 1 auto;
+}
+
+:host(:hover) .container {
+  z-index: 20;
+}
+:host(:hover) .container:not(.input-enabled) {
+  box-shadow: 0 0 0 1px var(--calcite-ui-brand);
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}

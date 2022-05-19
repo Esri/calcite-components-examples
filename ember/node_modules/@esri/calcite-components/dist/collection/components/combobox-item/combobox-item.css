@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+.scale--s{
+  font-size: var(--calcite-font-size--2);
+  line-height: 1rem;
+  --calcite-combobox-item-spacing-unit-l: 0.5rem;
+  --calcite-combobox-item-spacing-unit-s: 0.25rem;
+  --calcite-combobox-item-spacing-indent: 0.5rem;
+}
+
+.scale--m{
+  font-size: var(--calcite-font-size--1);
+  line-height: 1rem;
+  --calcite-combobox-item-spacing-unit-l: 0.75rem;
+  --calcite-combobox-item-spacing-unit-s: 0.5rem;
+  --calcite-combobox-item-spacing-indent: 0.75rem;
+}
+
+.scale--l{
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+  --calcite-combobox-item-spacing-unit-l: 1rem;
+  --calcite-combobox-item-spacing-unit-s: 0.75rem;
+  --calcite-combobox-item-spacing-indent: 1rem;
+}
+
+.container {
+  --calcite-combobox-item-indent-value: calc(
+    var(--calcite-combobox-item-spacing-indent) * var(--calcite-combobox-item-spacing-indent-multiplier)
+  );
+}
+
+:host(:focus){
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+:host([disabled]){
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}
+
+:host, ul{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.label{
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  min-width: 100%;
+  cursor: pointer;
+  align-items: center;
+  color: var(--calcite-ui-text-3);
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+  padding: var(--calcite-combobox-item-spacing-unit-s) var(--calcite-combobox-item-spacing-unit-l);
+}
+
+:host([disabled]) .label{
+  cursor: default;
+}
+
+.label--selected{
+  font-weight: var(--calcite-font-weight-medium);
+  color: var(--calcite-ui-text-1);
+}
+
+.label--active{
+  outline: 2px solid var(--calcite-ui-brand);
+  outline-offset: -2px;
+}
+
+.label:hover, .label:active{
+  background-color: var(--calcite-ui-foreground-2);
+  color: var(--calcite-ui-text-1);
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.title {
+  padding: 0 var(--calcite-combobox-item-spacing-unit-l);
+}
+
+.icon{
+  display: inline-flex;
+  opacity: 0;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--calcite-ui-border-1);
+}
+
+.icon--indent {
+  padding-inline-start: var(--calcite-combobox-item-indent-value);
+}
+
+.icon--custom {
+  margin-top: -1px;
+  color: var(--calcite-ui-text-3);
+}
+
+.icon--active{
+  color: var(--calcite-ui-text-1);
+}
+
+.icon--dot{
+  display: flex;
+  justify-content: flex-end;
+  min-width: var(--calcite-combobox-item-spacing-unit-l);
+}
+
+.icon--dot:before {
+  text-align: start;
+  content: "•";
+}
+
+.label--active .icon{
+  opacity: 1;
+}
+
+.label--selected .icon{
+  opacity: 1;
+  color: var(--calcite-ui-brand);
+}
+
+:host(:hover[disabled]) .icon{
+  opacity: 1;
+}

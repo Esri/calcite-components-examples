@@ -1,0 +1,237 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+:host([scale=s]) .text {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: var(--calcite-font-size--1);
+  line-height: 1rem;
+}
+:host([scale=s]) .chevron {
+  height: 2.25rem;
+}
+
+:host([scale=m]) .text {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+}
+:host([scale=m]) .chevron {
+  height: 3rem;
+}
+
+:host([scale=l]) .text {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: var(--calcite-font-size-1);
+  line-height: 1.5rem;
+}
+:host([scale=l]) .chevron {
+  height: 3.5rem;
+}
+
+.chevron {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+  box-sizing: content-box;
+  display: flex;
+  flex-grow: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  background-color: var(--calcite-ui-foreground-1);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  color: var(--calcite-ui-text-3);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+  width: 14.2857142857%;
+}
+.chevron:focus {
+  outline: 2px solid var(--calcite-ui-brand);
+  outline-offset: -2px;
+}
+.chevron:hover, .chevron:focus {
+  background-color: var(--calcite-ui-foreground-2);
+  fill: var(--calcite-ui-text-1);
+  color: var(--calcite-ui-text-1);
+}
+.chevron:active {
+  background-color: var(--calcite-ui-foreground-3);
+}
+.chevron[aria-disabled=true] {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.text {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.text-nreverse {
+  flex-direction: row-reverse;
+}
+
+.month, .year, .suffix {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  background-color: var(--calcite-ui-foreground-1);
+  font-weight: var(--calcite-font-weight-medium);
+  line-height: 1.25;
+  color: var(--calcite-ui-text-1);
+  font-size: inherit;
+}
+
+.year {
+  position: relative;
+  width: 3rem;
+  border-style: none;
+  background-color: transparent;
+  text-align: center;
+  font-family: inherit;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+  z-index: 2;
+}
+.year:hover {
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: outline-color;
+  outline: 2px solid var(--calcite-ui-border-2);
+  outline-offset: 2px;
+}
+.year:focus {
+  outline: 2px solid var(--calcite-ui-brand);
+  outline-offset: 2px;
+}
+
+.year--suffix {
+  width: 4rem;
+  text-align: left;
+}
+
+.year-wrap {
+  position: relative;
+}
+
+.suffix {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 4rem;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.suffix__invisible {
+  visibility: hidden;
+}

@@ -1,0 +1,142 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+.calender {
+  margin-bottom: 0.25rem;
+}
+
+.week-headers {
+  display: flex;
+  border-width: 0px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: var(--calcite-ui-border-3);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.week-header {
+  text-align: center;
+  font-weight: var(--calcite-font-weight-bold);
+  color: var(--calcite-ui-text-3);
+  width: 14.2857142857%;
+}
+
+:host([scale=s]) .week-header {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+  font-size: var(--calcite-font-size--2);
+  line-height: 1rem;
+}
+
+:host([scale=m]) .week-header {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0.75rem;
+  padding-bottom: 1rem;
+  font-size: var(--calcite-font-size--2);
+  line-height: 1rem;
+}
+
+:host([scale=l]) .week-header {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  font-size: var(--calcite-font-size--1);
+  line-height: 1rem;
+}
+
+.week-days {
+  display: flex;
+  flex-direction: row;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.week-days:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}

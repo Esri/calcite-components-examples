@@ -1,0 +1,173 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+/**
+* CSS Custom Properties
+*
+* These properties can be overridden using the component's tag as selector.
+*
+* @prop --calcite-dropdown-width: the width of the dropdown wrapper
+*/
+:host {
+  display: inline-flex;
+  flex: 0 1 auto;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}
+
+:host .calcite-dropdown-wrapper {
+  display: block;
+  position: absolute;
+  z-index: 900;
+  transform: scale(0);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.calcite-dropdown-wrapper .calcite-popper-anim {
+  position: relative;
+  z-index: 1;
+  transition: var(--calcite-popper-transition);
+  visibility: hidden;
+  transition-property: transform, visibility, opacity;
+  opacity: 0;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 0.25rem;
+}
+.calcite-dropdown-wrapper[data-popper-placement^=bottom] .calcite-popper-anim {
+  transform: translateY(-5px);
+}
+.calcite-dropdown-wrapper[data-popper-placement^=top] .calcite-popper-anim {
+  transform: translateY(5px);
+}
+.calcite-dropdown-wrapper[data-popper-placement^=left] .calcite-popper-anim {
+  transform: translateX(5px);
+}
+.calcite-dropdown-wrapper[data-popper-placement^=right] .calcite-popper-anim {
+  transform: translateX(-5px);
+}
+.calcite-dropdown-wrapper[data-popper-placement] .calcite-popper-anim--active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0);
+}
+
+:host([active]) .calcite-dropdown-wrapper {
+  pointer-events: initial;
+  visibility: visible;
+}
+
+:host .calcite-dropdown-content {
+  width: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--calcite-ui-foreground-1);
+  max-height: 90vh;
+  width: var(--calcite-dropdown-width);
+}
+
+.calcite-dropdown-trigger-container {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+:host([width=s]) {
+  --calcite-dropdown-width: 12rem;
+}
+
+:host([width=m]) {
+  --calcite-dropdown-width: 14rem;
+}
+
+:host([width=l]) {
+  --calcite-dropdown-width: 16rem;
+}

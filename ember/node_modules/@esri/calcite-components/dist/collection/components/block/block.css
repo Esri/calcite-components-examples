@@ -1,0 +1,341 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: var(--calcite-font-size--1);
+}
+:host * {
+  box-sizing: border-box;
+}
+
+:host {
+  /* Component spacing variables */
+  --calcite-icon-size: 1rem;
+  --calcite-spacing-eighth: 0.125rem;
+  --calcite-spacing-quarter: 0.25rem;
+  --calcite-spacing-half: 0.5rem;
+  --calcite-spacing-three-quarters: 0.75rem;
+  --calcite-spacing: 1rem;
+  --calcite-spacing-plus-quarter: 1.25rem;
+  --calcite-spacing-plus-half: 1.5rem;
+  --calcite-spacing-double: 2rem;
+  --calcite-menu-min-width: 10rem;
+  --calcite-header-min-height: 3rem;
+  --calcite-footer-min-height: 3rem;
+}
+
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-direction: column;
+  border-width: 0px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: var(--calcite-ui-border-3);
+  padding: 0px;
+  transition-property: margin;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.215, 0.440, 0.420, 0.880);
+  flex-basis: auto;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}
+
+/* Shared styles for header elements */
+.header {
+  margin: 0px;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  fill: var(--calcite-ui-text-2);
+  color: var(--calcite-ui-text-2);
+}
+
+.heading {
+  margin: 0px;
+  padding: 0px;
+  font-weight: var(--calcite-font-weight-medium);
+}
+
+.header .heading {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+}
+
+h1.heading {
+  font-size: var(--calcite-font-size-2);
+  line-height: 1.5rem;
+}
+
+h2.heading {
+  font-size: var(--calcite-font-size-1);
+  line-height: 1.5rem;
+}
+
+h3.heading {
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+}
+
+h4.heading, h5.heading {
+  font-size: var(--calcite-font-size--1);
+  line-height: 1rem;
+}
+
+.header {
+  justify-content: flex-start;
+  padding: 0px;
+}
+
+.header,
+.toggle {
+  grid-area: header;
+}
+
+.header-container {
+  display: grid;
+  align-items: stretch;
+  grid-template: auto/auto 1fr auto auto;
+  grid-template-areas: "handle header control menu";
+  grid-column: header-start/menu-end;
+  grid-row: 1/2;
+}
+
+.toggle {
+  margin: 0px;
+  display: flex;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-style: none;
+  padding: 0px;
+  font-family: inherit;
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+  text-align: initial;
+  background-color: transparent;
+}
+.toggle:hover {
+  background-color: var(--calcite-ui-foreground-2);
+}
+.toggle:focus {
+  outline: 2px solid var(--calcite-ui-brand);
+  outline-offset: -2px;
+}
+
+calcite-loader[inline] {
+  grid-area: control;
+  align-self: center;
+}
+
+calcite-handle {
+  grid-area: handle;
+}
+
+.title {
+  margin: 0px;
+  padding: 0.75rem;
+}
+
+.header .title .heading {
+  padding: 0px;
+  font-size: var(--calcite-font-size--1);
+  font-weight: var(--calcite-font-weight-medium);
+  line-height: 1.25;
+  color: var(--calcite-ui-text-2);
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.summary {
+  margin-top: 0.125rem;
+  padding: 0px;
+  font-size: var(--calcite-font-size--2);
+  color: var(--calcite-ui-text-3);
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.icon {
+  margin-inline-start: 0.75rem;
+  margin-inline-end: 0px;
+  margin-block: 0.75rem;
+}
+
+.status-icon.valid {
+  color: var(--calcite-ui-success);
+}
+
+.status-icon.invalid {
+  color: var(--calcite-ui-danger);
+}
+
+.status-icon.loading {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.toggle-icon {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  align-self: center;
+  justify-self: end;
+  color: var(--calcite-ui-text-3);
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-inline-end: 1rem;
+  margin-inline-start: auto;
+}
+
+.toggle:hover .toggle-icon {
+  color: var(--calcite-ui-text-1);
+}
+
+.content {
+  position: relative;
+}
+
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content {
+  animation: in var(--calcite-internal-animation-timing-slow) ease-in-out;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.control-container {
+  margin: 0px;
+  display: flex;
+  grid-area: control;
+}
+
+calcite-action-menu {
+  grid-area: menu;
+}
+
+:host([open]) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+:host([open]) .header .title .heading {
+  color: var(--calcite-ui-text-1);
+}

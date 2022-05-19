@@ -1,0 +1,209 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: var(--calcite-font-size--1);
+}
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+/**
+* CSS Custom Properties
+*
+* These properties can be overridden using the component's tag as selector.
+*
+* @prop --calcite-shell-tip-spacing: the left/right positioning of the tip-manager when slotted within a shell
+*/
+:host {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  --calcite-shell-tip-spacing: 26vw;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.main--reversed {
+  flex-direction: row-reverse;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.content ::slotted(calcite-shell-center-row), .content ::slotted(calcite-panel), .content ::slotted(calcite-flow) {
+  flex: 1 1 auto;
+  align-self: stretch;
+  max-height: unset;
+}
+
+.content--behind {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 0;
+  border-width: 0px;
+  display: initial;
+}
+
+::slotted(calcite-shell-center-row) {
+  width: unset;
+}
+
+::slotted(.header .heading) {
+  font-size: var(--calcite-font-size--2);
+  line-height: 1.375;
+  font-weight: var(--calcite-font-weight-normal);
+}
+
+::slotted(calcite-shell-panel), ::slotted(calcite-shell-center-row) {
+  position: relative;
+  z-index: 1;
+}
+
+::slotted(calcite-panel), ::slotted(calcite-flow) {
+  border-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-style: solid;
+  border-color: var(--calcite-ui-border-3);
+}
+
+slot[name=center-row]::slotted(calcite-shell-center-row:not([detached])) {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-color: var(--calcite-ui-border-3);
+}
+
+::slotted(calcite-tip-manager) {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+::slotted(calcite-tip-manager) {
+  animation: in-up var(--calcite-internal-animation-timing-slow) ease-in-out;
+  border-radius: 0.25rem;
+  --tw-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  --tw-shadow-colored: 0 6px 20px -4px var(--tw-shadow-color), 0 4px 12px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  bottom: 0.5rem;
+  left: var(--calcite-shell-tip-spacing);
+  right: var(--calcite-shell-tip-spacing);
+  z-index: 2;
+}

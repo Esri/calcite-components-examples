@@ -1,0 +1,202 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+/**
+* CSS Custom Properties
+*
+* These properties can be overridden using the component's tag as selector.
+*
+* @prop --calcite-pagination-spacing: the amount of padding around each pagination item
+*/
+:host([scale=s]) {
+  --calcite-pagination-spacing: 0.25rem 0.5rem;
+}
+:host([scale=s]) .previous, :host([scale=s]) .next, :host([scale=s]) .page {
+  height: 1.5rem;
+  font-size: var(--calcite-font-size--2);
+  line-height: 1rem;
+}
+:host([scale=s]) .previous, :host([scale=s]) .next {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+:host([scale=m]) {
+  --calcite-pagination-spacing: 0.5rem 0.75rem;
+}
+:host([scale=m]) .previous, :host([scale=m]) .next, :host([scale=m]) .page {
+  height: 2rem;
+  font-size: var(--calcite-font-size--1);
+  line-height: 1rem;
+}
+:host([scale=m]) .previous, :host([scale=m]) .next {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+:host([scale=l]) {
+  --calcite-pagination-spacing: 0.75rem 1rem;
+}
+:host([scale=l]) .previous, :host([scale=l]) .next, :host([scale=l]) .page {
+  height: 2.75rem;
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+}
+:host([scale=l]) .previous, :host([scale=l]) .next {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+:host {
+  display: flex;
+  writing-mode: horizontal-tb;
+}
+
+:host button {
+  outline-offset: 0;
+  outline-color: transparent;
+  transition: outline-offset 100ms ease-in-out, outline-color 100ms ease-in-out;
+}
+:host button:focus {
+  outline: 2px solid var(--calcite-ui-brand);
+  outline-offset: -2px;
+}
+
+.previous, .next, .page {
+  box-sizing: border-box;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-style: none;
+  --tw-border-opacity: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+  color: var(--calcite-ui-text-3);
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+.previous:hover, .next:hover, .page:hover {
+  color: var(--calcite-ui-text-1);
+  transition-property: all;
+  transition-duration: var(--calcite-animation-timing);
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+.page:hover {
+  border-bottom-color: var(--calcite-ui-border-2);
+}
+.page.is-selected {
+  font-weight: var(--calcite-font-weight-medium);
+  color: var(--calcite-ui-text-1);
+  border-bottom-color: var(--calcite-ui-brand);
+}
+
+.previous:hover, .next:hover {
+  background-color: var(--calcite-ui-foreground-2);
+  color: var(--calcite-ui-brand);
+}
+.previous:active, .next:active {
+  background-color: var(--calcite-ui-foreground-3);
+}
+.previous.is-disabled, .next.is-disabled {
+  pointer-events: none;
+  background-color: transparent;
+}
+.previous.is-disabled > calcite-icon, .next.is-disabled > calcite-icon {
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+
+.next {
+  margin-right: 0px;
+}
+
+.page,
+.ellipsis {
+  padding: var(--calcite-pagination-spacing);
+}
+
+.ellipsis {
+  display: flex;
+  align-items: flex-end;
+  color: var(--calcite-ui-text-3);
+}

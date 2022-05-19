@@ -1,0 +1,296 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:host {
+  /* Component spacing variables */
+  --calcite-icon-size: 1rem;
+  --calcite-spacing-eighth: 0.125rem;
+  --calcite-spacing-quarter: 0.25rem;
+  --calcite-spacing-half: 0.5rem;
+  --calcite-spacing-three-quarters: 0.75rem;
+  --calcite-spacing: 1rem;
+  --calcite-spacing-plus-quarter: 1.25rem;
+  --calcite-spacing-plus-half: 1.5rem;
+  --calcite-spacing-double: 2rem;
+  --calcite-menu-min-width: 10rem;
+  --calcite-header-min-height: 3rem;
+  --calcite-footer-min-height: 3rem;
+}
+
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: visible;
+  vertical-align: top;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}
+
+.calendar-picker-wrapper {
+  position: static;
+  width: 100%;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transform: translate3d(0, 0, 0);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+:host([range]) .input-container {
+  display: flex;
+}
+:host([range]) .input-wrapper {
+  flex: 1 1 auto;
+}
+:host([range]) .horizontal-arrow-container {
+  display: flex;
+  align-items: center;
+  border-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-style: solid;
+  border-color: var(--calcite-ui-border-input);
+  background-color: var(--calcite-ui-background);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+:host([range][layout=vertical]) .input-wrapper {
+  width: 100%;
+}
+:host([range][layout=vertical]) .input-container {
+  flex-direction: column;
+  align-items: flex-start;
+}
+:host([range][layout=vertical]) .calendar-picker-wrapper--end {
+  transform: translate3d(0, 0, 0);
+}
+:host([range][layout=vertical]) .vertical-arrow-container {
+  top: 1.5rem;
+  position: absolute;
+  left: 0px;
+  z-index: 10;
+  margin-left: 1px;
+  margin-right: 1px;
+  background-color: var(--calcite-ui-foreground-1);
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+:host([scale=s][range]:not([layout=vertical])) .calendar-picker-wrapper {
+  width: 216px;
+}
+
+:host([scale=m][range]:not([layout=vertical])) .calendar-picker-wrapper {
+  width: 286px;
+}
+
+:host([scale=l][range]:not([layout=vertical])) .calendar-picker-wrapper {
+  width: 398px;
+}
+
+.menu-container {
+  display: block;
+  position: absolute;
+  z-index: 900;
+  transform: scale(0);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.menu-container .calcite-popper-anim {
+  position: relative;
+  z-index: 1;
+  transition: var(--calcite-popper-transition);
+  visibility: hidden;
+  transition-property: transform, visibility, opacity;
+  opacity: 0;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 0.25rem;
+}
+.menu-container[data-popper-placement^=bottom] .calcite-popper-anim {
+  transform: translateY(-5px);
+}
+.menu-container[data-popper-placement^=top] .calcite-popper-anim {
+  transform: translateY(5px);
+}
+.menu-container[data-popper-placement^=left] .calcite-popper-anim {
+  transform: translateX(5px);
+}
+.menu-container[data-popper-placement^=right] .calcite-popper-anim {
+  transform: translateX(-5px);
+}
+.menu-container[data-popper-placement] .calcite-popper-anim--active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0);
+}
+
+:host([active]) .menu-container {
+  pointer-events: initial;
+  visibility: visible;
+}
+
+.menu-container--active .menu-container .calcite-popper-anim {
+  position: relative;
+  z-index: 1;
+  transition: var(--calcite-popper-transition);
+  visibility: hidden;
+  transition-property: transform, visibility, opacity;
+  opacity: 0;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 0.25rem;
+}
+.menu-container--active .menu-container[data-popper-placement^=bottom] .calcite-popper-anim {
+  transform: translateY(-5px);
+}
+.menu-container--active .menu-container[data-popper-placement^=top] .calcite-popper-anim {
+  transform: translateY(5px);
+}
+.menu-container--active .menu-container[data-popper-placement^=left] .calcite-popper-anim {
+  transform: translateX(5px);
+}
+.menu-container--active .menu-container[data-popper-placement^=right] .calcite-popper-anim {
+  transform: translateX(-5px);
+}
+.menu-container--active .menu-container[data-popper-placement] .calcite-popper-anim--active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0);
+}
+
+.input .calcite-input__wrapper {
+  margin-top: 0px;
+}
+
+:host([range][layout=vertical][scale=m]) .vertical-arrow-container {
+  top: 1.5rem;
+  padding-left: 0.75rem;
+}
+:host([range][layout=vertical][scale=m]) .vertical-arrow-container calcite-icon {
+  height: 0.75rem;
+  width: 0.75rem;
+  min-width: 0px;
+}
+
+:host([range][layout=vertical][scale=l]) .vertical-arrow-container {
+  top: 2.25rem;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
+:host([range][layout=vertical][active]) .vertical-arrow-container {
+  display: none;
+}
+
+::slotted(input[slot=hidden-form-input]) {
+  bottom: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  outline: none !important;
+  padding: 0 !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  -webkit-appearance: none !important;
+  z-index: -1 !important;
+}

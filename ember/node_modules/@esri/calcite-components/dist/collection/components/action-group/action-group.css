@@ -1,0 +1,145 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: var(--calcite-font-size--1);
+}
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+/**
+* CSS Custom Properties
+*
+* These properties can be overridden using the component's tag as selector.
+*
+* @prop --calcite-action-group-columns: sets number of grid-template-columns when layout is grid
+*/
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  --calcite-action-group-columns: 3;
+}
+
+:host([columns="1"]) {
+  --calcite-action-group-columns: 1;
+}
+
+:host([columns="2"]) {
+  --calcite-action-group-columns: 2;
+}
+
+:host([columns="3"]) {
+  --calcite-action-group-columns: 3;
+}
+
+:host([columns="4"]) {
+  --calcite-action-group-columns: 4;
+}
+
+:host([columns="5"]) {
+  --calcite-action-group-columns: 5;
+}
+
+:host([columns="6"]) {
+  --calcite-action-group-columns: 6;
+}
+
+:host(:first-child) {
+  padding-top: 0px;
+}
+
+:host([layout=horizontal]) {
+  flex-direction: row;
+}
+
+:host([layout=grid]) {
+  display: grid;
+  place-content: stretch;
+  gap: 1px;
+  background-color: var(--calcite-ui-background);
+  padding: 1px;
+  grid-template-columns: repeat(var(--calcite-action-group-columns), auto);
+}

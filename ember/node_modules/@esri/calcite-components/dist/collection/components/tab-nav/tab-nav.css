@@ -1,0 +1,148 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  position: relative;
+  display: flex;
+}
+
+:host([scale=s]) {
+  min-height: 1.5rem;
+}
+
+:host([scale=m]) {
+  min-height: 2rem;
+}
+
+:host([scale=l]) {
+  min-height: 2.75rem;
+}
+
+.tab-nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  overflow: auto;
+}
+
+:host([layout=center]) .tab-nav {
+  justify-content: center;
+}
+
+.tab-nav-active-indicator-container {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 0.125rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tab-nav-active-indicator {
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  height: 0.125rem;
+  background-color: var(--calcite-ui-brand);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+:host([position=below]) .tab-nav-active-indicator {
+  bottom: unset;
+  top: 0px;
+}
+
+:host([position=below]) .tab-nav-active-indicator-container {
+  bottom: unset;
+  top: 0px;
+}
+
+:host([bordered]) .tab-nav-active-indicator-container {
+  bottom: unset;
+}
+
+:host([bordered][position=below]) .tab-nav-active-indicator-container {
+  bottom: 0;
+  top: unset;
+}

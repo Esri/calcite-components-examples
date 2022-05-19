@@ -1,0 +1,226 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: inline-block;
+}
+
+:host .split-button__container {
+  display: flex;
+  align-items: stretch;
+}
+:host .split-button__container > calcite-dropdown > calcite-button {
+  height: 100%;
+  vertical-align: top;
+}
+
+:host([appearance=solid]):host([color=blue]) {
+  --calcite-split-button-background: var(--calcite-ui-brand);
+  --calcite-split-button-divider: var(--calcite-ui-foreground-1);
+}
+:host([appearance=solid]):host([color=red]) {
+  --calcite-split-button-background: var(--calcite-ui-danger);
+  --calcite-split-button-divider: var(--calcite-ui-foreground-1);
+}
+:host([appearance=solid]):host([color=neutral]) {
+  --calcite-split-button-background: var(--calcite-ui-foreground-3);
+  --calcite-split-button-divider: var(--calcite-ui-text-1);
+}
+:host([appearance=solid]):host([color=inverse]) {
+  --calcite-split-button-background: var(--calcite-ui-inverse);
+  --calcite-split-button-divider: var(--calcite-ui-foreground-1);
+}
+
+:host([appearance=transparent]):host([color=blue]) {
+  --calcite-split-button-divider: var(--calcite-ui-brand);
+}
+:host([appearance=transparent]):host([color=red]) {
+  --calcite-split-button-divider: var(--calcite-ui-danger);
+}
+:host([appearance=transparent]):host([color=neutral]) {
+  --calcite-split-button-divider: var(--calcite-ui-text-1);
+}
+:host([appearance=transparent]):host([color=inverse]) {
+  --calcite-split-button-divider: var(--calcite-ui-foreground-1);
+}
+
+:host([appearance=clear]),
+:host([appearance=transparent]) {
+  --calcite-split-button-background: transparent;
+}
+
+:host([appearance=outline]) {
+  --calcite-split-button-background: var(--calcite-ui-foreground-1);
+}
+
+:host([appearance=clear]):host([color=blue]),
+:host([appearance=outline]):host([color=blue]) {
+  --calcite-split-button-divider: var(--calcite-ui-brand);
+}
+:host([appearance=clear]):host([color=red]),
+:host([appearance=outline]):host([color=red]) {
+  --calcite-split-button-divider: var(--calcite-ui-danger);
+}
+:host([appearance=clear]):host([color=neutral]),
+:host([appearance=outline]):host([color=neutral]) {
+  --calcite-split-button-divider: var(--calcite-ui-foreground-3);
+}
+:host([appearance=clear]):host([color=inverse]),
+:host([appearance=outline]):host([color=inverse]) {
+  --calcite-split-button-divider: var(--calcite-ui-inverse);
+}
+
+.width-auto {
+  width: auto;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.split-button__divider-container {
+  display: flex;
+  width: 1px;
+  align-items: stretch;
+  transition-property: all;
+  transition-duration: var(--calcite-animation-timing);
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  background-color: var(--calcite-split-button-background);
+}
+
+.split-button__divider {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+  width: 1px;
+  background-color: var(--calcite-split-button-divider);
+}
+
+:host([appearance=outline]) .split-button__divider-container,
+:host([appearance=clear]) .split-button__divider-container {
+  border-top: 1px solid var(--calcite-split-button-divider);
+  border-bottom: 1px solid var(--calcite-split-button-divider);
+}
+:host([appearance=outline]):hover .split-button__divider-container,
+:host([appearance=clear]):hover .split-button__divider-container {
+  background-color: var(--calcite-split-button-divider);
+}
+
+:host([appearance=outline]:hover) .split-button__divider-container,
+:host([appearance=clear]:hover) .split-button__divider-container {
+  background-color: var(--calcite-split-button-divider);
+}
+
+:host([appearance=outline]:focus-within):host([color=blue]),
+:host([appearance=clear]:focus-within):host([color=blue]) {
+  --calcite-split-button-divider: var(--calcite-ui-brand-press);
+}
+:host([appearance=outline]:focus-within):host([color=red]),
+:host([appearance=clear]:focus-within):host([color=red]) {
+  --calcite-split-button-divider: var(--calcite-ui-danger-press);
+}
+:host([appearance=outline]:focus-within) .split-button__divider-container,
+:host([appearance=clear]:focus-within) .split-button__divider-container {
+  background-color: var(--calcite-split-button-divider);
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) .split-button__divider-container {
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) calcite-dropdown > calcite-button {
+  pointer-events: none;
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}

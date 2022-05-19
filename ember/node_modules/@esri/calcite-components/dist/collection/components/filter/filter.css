@@ -1,0 +1,180 @@
+/* mixins & extensions */
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+:root {
+  --calcite-animation-timing: calc(150ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-duration-factor: var(--calcite-duration-factor, 1);
+  --calcite-internal-animation-timing-fast: calc(100ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-medium: calc(200ms * var(--calcite-internal-duration-factor));
+  --calcite-internal-animation-timing-slow: calc(300ms * var(--calcite-internal-duration-factor));
+}
+
+.calcite-animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: var(--calcite-animation-timing);
+}
+
+.calcite-animate__in {
+  animation-name: in;
+}
+
+.calcite-animate__in-down {
+  animation-name: in-down;
+}
+
+.calcite-animate__in-up {
+  animation-name: in-up;
+}
+
+.calcite-animate__in-scale {
+  animation-name: in-scale;
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+:host {
+  /* Base ":host" styles for the component */
+  box-sizing: border-box;
+  background-color: var(--calcite-ui-foreground-1);
+  color: var(--calcite-ui-text-2);
+  font-size: var(--calcite-font-size--1);
+}
+:host * {
+  box-sizing: border-box;
+}
+
+:root {
+  --calcite-popper-transition: var(--calcite-animation-timing);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: flex;
+  width: 100%;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: var(--calcite-ui-opacity-disabled);
+}
+:host([disabled]) ::slotted([calcite-hydrated][disabled]),
+:host([disabled]) [calcite-hydrated][disabled] {
+  /* prevent opacity stacking */
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+label {
+  position: relative;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+}
+
+input[type=text] {
+  margin-bottom: 0.25rem;
+  width: 100%;
+  border-style: none;
+  background-color: transparent;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-right: 0.25rem;
+  padding-left: 1.5rem;
+  font-family: inherit;
+  font-size: var(--calcite-font-size--2);
+  line-height: 1rem;
+  color: var(--calcite-ui-text-1);
+  transition: padding var(--calcite-animation-timing), box-shadow var(--calcite-animation-timing);
+}
+input[type=text]::-ms-clear {
+  display: none;
+}
+
+calcite-input {
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  display: flex;
+  color: var(--calcite-ui-text-2);
+  inset-inline-start: 0;
+  transition: left var(--calcite-animation-timing), right var(--calcite-animation-timing), opacity var(--calcite-animation-timing);
+}
+
+input[type=text]:focus {
+  border-color: var(--calcite-ui-brand);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  padding-inline: 0.25rem;
+}
+input[type=text]:focus ~ .search-icon {
+  inset-inline-start: calc(1rem * -1);
+  opacity: 0;
+}
+
+.clear-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-width: 0px;
+  background-color: transparent;
+  color: var(--calcite-ui-text-2);
+}
+.clear-button:hover, .clear-button:focus {
+  color: var(--calcite-ui-text-1);
+}
