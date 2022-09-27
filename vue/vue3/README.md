@@ -76,3 +76,7 @@ module.exports = {
 ```
 
 Check out Vue's [web components documentation](https://v3.vuejs.org/guide/web-components.html) for more information.
+
+## Known Issues
+
+Vue 3 currently doesn't support attaching event listeners on a custom element in a template to a custom event that contains capital letters: [https://github.com/vuejs/core/issues/5401](vuejs/core#5401).  To workaround this, adding a Vue directive will allow your Vue component to listen for custom events emitted from Calcite components.  See the `src/components/HelloWorld.vue` file for an example on this approach.
