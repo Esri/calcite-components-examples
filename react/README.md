@@ -23,10 +23,11 @@ To install [`calcite-components-react`](https://www.npmjs.com/package/@esri/calc
 npm install --save @esri/calcite-components-react
 ```
 
-This package includes the compatible version of the main component library as a dependency, so no need to install `@esri/calcite-components` separately. 
+This package includes the compatible version of the main component library as a dependency, so no need to install `@esri/calcite-components` separately.
 
 ## Use
-[Custom Elements](https://stenciljs.com/docs/custom-elements) is the recomended build when using frontend frameworks, such as React. To use this build, you will need to set the path to the `calcite-components` assets. You can either use local assets, which will be explained in a subsequent step, or assets hosted on a CDN. This example uses local assets.
+
+[Custom Elements](https://stenciljs.com/docs/custom-elements) is the recommended build when using frontend frameworks, such as React. To use this build, you will need to set the path to the `calcite-components` assets. You can either use local assets, which will be explained in a subsequent step, or assets hosted on a CDN. This example uses local assets.
 
 ```jsx
 import { setAssetPath } from "@esri/calcite-components/dist/components";
@@ -46,17 +47,17 @@ import "@esri/calcite-components/dist/components/calcite-slider";
 import {
   CalciteButton,
   CalciteIcon,
-  CalciteSlider
+  CalciteSlider,
 } from "@esri/calcite-components-react";
 ```
 
 ### Import stylesheet
+
 Import the global stylesheet into your app (only do this once):
 
 ```js
 import "@esri/calcite-components/dist/calcite/calcite.css";
 ```
-
 
 ### Copy local assets
 
@@ -96,3 +97,7 @@ const [sliderValue, setSliderValue] = useState(50);
 ```
 
 If you're using TypeScript, you'll also get increased type safety for your event listeners, props, etc.
+
+## Gotchas
+
+There are a few [gotchas for Calcite's React components](https://developers.arcgis.com/calcite-design-system/frameworks/#gotchas), such as Boolean attributes and configuring Jest.

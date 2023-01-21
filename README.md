@@ -36,6 +36,8 @@ The [example react app](./react/) was created using the `create-react-app` utili
 npx create-react-app [NAME]
 ```
 
+There are a few [gotchas for Calcite's React components](https://developers.arcgis.com/calcite-design-system/frameworks/#gotchas), such as Boolean attributes and configuring Jest.
+
 ## Preact
 
 The [example preact app](./preact-typescript/) was created using the `preact create` utility:
@@ -46,7 +48,6 @@ preact create typescript [NAME]
 ```
 
 This example also uses TypeScript, and provides additional instructions for getting calcite components to work inside a TypeScript + Preact environment.
-
 
 ## Vue
 
@@ -70,6 +71,7 @@ npx degit "rollup/rollup-starter-app" [NAME]
 The [Webpack example](./webpack/) was built from scratch using Webpack 4.x.
 
 ## License
+
 COPYRIGHT © 2020 Esri
 
 All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
