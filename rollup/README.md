@@ -24,13 +24,12 @@ After calcite-components is installed, import the components you will use in the
 ```js
 // src/main.js
 import { setAssetPath } from '@esri/calcite-components/dist/components';
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-date-picker";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-date-picker';
 import '@esri/calcite-components/dist/calcite/calcite.css';
 
 setAssetPath(document.currentScript.src);
-
 ```
 
 Using `setAssetPath` will ensure that calcite components look for assets like icons in the correct location (more on copying assets below).
@@ -83,4 +82,3 @@ copy({
   ]
 }),
 ```
-

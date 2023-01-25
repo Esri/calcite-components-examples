@@ -18,7 +18,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@esri/calcite-components": "^1.0.0-beta.99",
+    "@esri/calcite-components": "^1.0.3",
     "@types/sortablejs": "^1.10.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -37,5 +37,8 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
+  },
+  "volta": {
+    "node": "16.19.0"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "name": "vue3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "npm run copy",
+    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
+  },
+  "dependencies": {
+    "@esri/calcite-components": "^1.0.3",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "ncp": "^2.0.0",
+    "vite": "^4.0.0"
+  }
+}

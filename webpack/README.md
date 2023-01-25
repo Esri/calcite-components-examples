@@ -22,10 +22,10 @@ After calcite-components is installed, import the components you will use in the
 
 ```js
 // src/index.js
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-date-picker";
-import { setAssetPath } from "@esri/calcite-components/dist/components";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-date-picker';
+import { setAssetPath } from '@esri/calcite-components/dist/components';
 
 setAssetPath(location.href);
 ```
@@ -51,20 +51,20 @@ npm install --save-dev copy-webpack-plugin
 Then import the plugin in your `webpack.config.js` file and call it inside the `plugins` array:
 
 ```js
-const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
         {
-          from: "**",
-          context: "node_modules/@esri/calcite-components/dist/calcite/",
-          to: "./",
-        },
-      ],
-    }),
-  ],
+          from: '**',
+          context: 'node_modules/@esri/calcite-components/dist/calcite/',
+          to: './'
+        }
+      ]
+    })
+  ]
 };
 ```
 

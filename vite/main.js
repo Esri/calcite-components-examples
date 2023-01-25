@@ -1,9 +1,9 @@
 import { setAssetPath } from '@esri/calcite-components/dist/components';
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-loader";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-loader';
 import '@esri/calcite-components/dist/calcite/calcite.css';
-import './style.css'
+import './style.css';
 
 setAssetPath(location.href);
 
