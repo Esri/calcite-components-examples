@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { setAssetPath } from "@esri/calcite-components/dist/components";
+import { setAssetPath } from '@esri/calcite-components/dist/components';
 setAssetPath(window.location.href);
 
 ReactDOM.render(

@@ -23,13 +23,14 @@ To install [`calcite-components-react`](https://www.npmjs.com/package/@esri/calc
 npm install --save @esri/calcite-components-react
 ```
 
-This package includes the compatible version of the main component library as a dependency, so no need to install `@esri/calcite-components` separately. 
+This package includes the compatible version of the main component library as a dependency, so no need to install `@esri/calcite-components` separately.
 
 ## Use
+
 [Custom Elements](https://stenciljs.com/docs/custom-elements) is the recomended build when using frontend frameworks, such as React. To use this build, you will need to set the path to the `calcite-components` assets. You can either use local assets, which will be explained in a subsequent step, or assets hosted on a CDN. This example uses local assets.
 
 ```jsx
-import { setAssetPath } from "@esri/calcite-components/dist/components";
+import { setAssetPath } from '@esri/calcite-components/dist/components';
 // Local assets
 setAssetPath(window.location.href);
 
@@ -40,23 +41,23 @@ setAssetPath(window.location.href);
 Next, you need to import each component you use from the standard `calcite-component` package's build. This will automatically define the custom elements on the window. Then import the same components from `calcite-components-react`.
 
 ```jsx
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-slider";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-slider';
 import {
   CalciteButton,
   CalciteIcon,
   CalciteSlider
-} from "@esri/calcite-components-react";
+} from '@esri/calcite-components-react';
 ```
 
 ### Import stylesheet
+
 Import the global stylesheet into your app (only do this once):
 
 ```js
-import "@esri/calcite-components/dist/calcite/calcite.css";
+import '@esri/calcite-components/dist/calcite/calcite.css';
 ```
-
 
 ### Copy local assets
 
@@ -82,7 +83,7 @@ function onUpdate(event) {
 // https://stenciljs.com/docs/react#properties-and-events
 useEffect(
   (_) => {
-    sliderEl.current.addEventListener("calciteSliderUpdate", onUpdate);
+    sliderEl.current.addEventListener('calciteSliderUpdate', onUpdate);
   },
   [sliderEl]
 );

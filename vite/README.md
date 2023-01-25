@@ -23,11 +23,11 @@ After Calcite Components is installed, import the components you will use in the
 
 ```js
 // main.js
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-date-picker";
-import "@esri/calcite-components/dist/calcite/calcite.css";
-import { setAssetPath } from "@esri/calcite-components/dist/components";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-date-picker';
+import '@esri/calcite-components/dist/calcite/calcite.css';
+import { setAssetPath } from '@esri/calcite-components/dist/components';
 
 setAssetPath(location.href);
 ```
@@ -43,8 +43,8 @@ There are a few more steps we need to take so that Vite can successfully bundle 
 To that end, at the top of your config, add the following import:
 
 ```js
-import { defineConfig } from "vite";
-import copy from "rollup-plugin-copy";
+import { defineConfig } from 'vite';
+import copy from 'rollup-plugin-copy';
 ```
 
 ### Copying Icons
@@ -57,11 +57,11 @@ export default defineConfig({
     copy({
       targets: [
         {
-          src: "node_modules/@esri/calcite-components/dist/calcite/assets/",
-          dest: "public/",
-        },
-      ],
-    }),
-  ],
+          src: 'node_modules/@esri/calcite-components/dist/calcite/assets/',
+          dest: 'public/'
+        }
+      ]
+    })
+  ]
 });
 ```

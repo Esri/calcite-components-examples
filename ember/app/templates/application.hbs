@@ -1,13 +1,25 @@
 <h1>Hello, Ember 4!</h1>
 
-<calcite-button icon-end="banana" {{on "click" (fn (mut this.showModal) true)}}>Open Modal</calcite-button>
+<calcite-button
+  icon-end='banana'
+  {{on 'click' (fn (mut this.showModal) true)}}
+>Open Modal</calcite-button>
 
-<calcite-modal aria-labelledby="modal-title" close-button-disabled open={{this.showModal}}>
-  <h3 slot="header" id="modal-title">Are you happy?</h3>
-  <div slot="content">
+<calcite-modal
+  aria-labelledby='modal-title'
+  close-button-disabled
+  open={{this.showModal}}
+>
+  <h3 slot='header' id='modal-title'>Are you happy?</h3>
+  <div slot='content'>
     Because it works!
   </div>
-  <calcite-button slot="secondary" width="full" appearance="outline" {{on "click" (fn (mut this.showModal) false)}}>
+  <calcite-button
+    slot='secondary'
+    width='full'
+    appearance='outline'
+    {{on 'click' (fn (mut this.showModal) false)}}
+  >
     Cancel
   </calcite-button>
 </calcite-modal>

@@ -10,7 +10,6 @@ test('renders hello react text', () => {
 test('button resets slider value', () => {
   render(<App />);
   const button = screen.queryByText(/Reset/);
-  fireEvent.click(button)
+  fireEvent.click(button);
   expect(screen.queryByText(/50/)).toBeNull();
-
 });

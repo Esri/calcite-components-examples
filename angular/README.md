@@ -22,22 +22,24 @@ npm install --save @esri/calcite-components
 
 ### Dependencies
 
-#### sortablejs  
-To install the sortablejs dependency in an Angular project, run:  
+#### sortablejs
+
+To install the sortablejs dependency in an Angular project, run:
 
 ```
 npm install --save @types/sortablejs
 ```
 
-### Custom Components  
+### Custom Components
+
 To use custom components in Angular, you have to tell the module to include the schema for custom elements. Fortunately, Angular makes this pretty easy. Add something like the following to your `app.module.ts` file:
 
 ```ts
 // src/app/app.module.ts
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
 ```
@@ -46,12 +48,13 @@ Next, import and call `setAssetPath`:
 
 ```ts
 // src/main.ts
-import { setAssetPath } from "@esri/calcite-components/dist/components";
+import { setAssetPath } from '@esri/calcite-components/dist/components';
 setAssetPath(location.href);
 ```
 
 ### Allow Synthetic Default Imports
-Allow default imports from modules with no default export. This does not affect the code emit, just typechecking. 
+
+Allow default imports from modules with no default export. This does not affect the code emit, just typechecking.
 
 To enable set the `allowedSyntheticDefaultImports` property to `true` in the `compilerOptions` object.
 
@@ -65,13 +68,14 @@ To enable set the `allowedSyntheticDefaultImports` property to `true` in the `co
 ```
 
 ### Import Calcite Components
+
 Now that everything is set up, you can import the components:
 
 ```ts
 // src/app/app.component.ts
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-date-picker";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-date-picker';
 ```
 
 ## Adding the CSS
@@ -80,7 +84,7 @@ Calcite Components has a single stylesheet which provides CSS variables for colo
 
 ```css
 /* styles.css */
-@import "@esri/calcite-components/dist/calcite/calcite.css";
+@import '@esri/calcite-components/dist/calcite/calcite.css';
 ```
 
 ## Adding the assets

@@ -1,7 +1,7 @@
-import { defineCustomElements } from "@esri/calcite-components/dist/loader";
+import { defineCustomElements } from '@esri/calcite-components/dist/loader';
 
 defineCustomElements(window, {
-  resourcesUrl: "assets/calcite/",
+  resourcesUrl: 'assets/calcite/',
 });
 
 export function initialize(/* application */) {}

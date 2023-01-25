@@ -15,25 +15,22 @@ const eventDirective = {
   },
   beforeUnmount(el, { arg, value }) {
     el.removeEventListener(arg, value);
-  },
+  }
 };
 
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    msg: String
   },
   methods: {
     datePickerRangeChangeHandler(event) {
-      console.log(
-        'datePickerRangeChangeHandler',
-        event.detail,
-      );
-    },
+      console.log('datePickerRangeChangeHandler', event.detail);
+    }
   },
   directives: {
-    event: eventDirective,
-  },
+    event: eventDirective
+  }
 };
 </script>
 
@@ -41,8 +38,7 @@ export default {
 
 <template>
   <div class="hello">
-    <h1>{{ msg }} <calcite-icon icon="banana"></calcite-icon>
-    </h1>
+    <h1>{{ msg }} <calcite-icon icon="banana"></calcite-icon></h1>
     <calcite-date-picker
       range
       v-event:calciteDatePickerRangeChange="datePickerRangeChangeHandler"
@@ -50,4 +46,3 @@ export default {
     <calcite-button>Button</calcite-button>
   </div>
 </template>
-

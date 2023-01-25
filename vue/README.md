@@ -32,7 +32,7 @@ After Calcite Components is installed, import and call `setAssetPath` to load th
 
 ```js
 // src/main.js
-import { setAssetPath } from "@esri/calcite-components/dist/components";
+import { setAssetPath } from '@esri/calcite-components/dist/components';
 setAssetPath(location.href);
 ```
 
@@ -40,9 +40,9 @@ Import the Calcite Components when they are used:
 
 ```js
 // src/components/HelloWorld.vue
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-icon";
-import "@esri/calcite-components/dist/components/calcite-date-picker";
+import '@esri/calcite-components/dist/components/calcite-button';
+import '@esri/calcite-components/dist/components/calcite-icon';
+import '@esri/calcite-components/dist/components/calcite-date-picker';
 ```
 
 ### Adding the CSS
@@ -50,7 +50,7 @@ import "@esri/calcite-components/dist/components/calcite-date-picker";
 The global Calcite Components CSS can be added with a `<style>` tag in `HelloWorld.vue`:
 
 ```html
-<style src='@esri/calcite-components/dist/calcite/calcite.css'></style>
+<style src="@esri/calcite-components/dist/calcite/calcite.css"></style>
 ```
 
 ### Adding the assets

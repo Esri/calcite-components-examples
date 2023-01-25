@@ -1,5 +1,5 @@
-import { h } from "preact";
-import style from "./style.css";
+import { h } from 'preact';
+import style from './style.css';
 
 const Home = () => {
   return (
@@ -9,12 +9,14 @@ const Home = () => {
       <calcite-dropdown
         oncalciteDropdownClose={(event) =>
           console.log(
-            "closing dropdown, the following item(s) are selected",
+            'closing dropdown, the following item(s) are selected',
             (event.target as HTMLCalciteDropdownElement).selectedItems
           )
         }
       >
-        <calcite-button icon-start="banana" slot="trigger">Sort</calcite-button>
+        <calcite-button icon-start="banana" slot="trigger">
+          Sort
+        </calcite-button>
         <calcite-dropdown-group>
           <calcite-dropdown-item>Relevance</calcite-dropdown-item>
           <calcite-dropdown-item>Date modified</calcite-dropdown-item>

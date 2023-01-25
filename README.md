@@ -47,7 +47,6 @@ preact create typescript [NAME]
 
 This example also uses TypeScript, and provides additional instructions for getting calcite components to work inside a TypeScript + Preact environment.
 
-
 ## Vue
 
 The [Vue.js example](./vue/) was built using the `cli-service-global` package:
@@ -70,6 +69,7 @@ npx degit "rollup/rollup-starter-app" [NAME]
 The [Webpack example](./webpack/) was built from scratch using Webpack 4.x.
 
 ## License
+
 COPYRIGHT © 2020 Esri
 
 All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
