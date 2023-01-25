@@ -25,7 +25,7 @@ function App() {
         max="100"
         value={sliderValue}
         step="1"
-        onCalciteSliderUpdate={(e) => setSliderValue(e.target.value)}
+        onCalciteSliderInput={(e) => setSliderValue(e.target.value)}
       />
       <p>The slider currently has a value of {sliderValue}</p>
     </>
