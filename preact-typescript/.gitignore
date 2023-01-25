@@ -1,6 +1,6 @@
 node_modules
 /build
 /*.log
-src/assets/calcite-*/
-# Note: this can be safely removed once the extra JSON files are removed (beta.50)
-src/assets/*.json
+src/assets/
+!src/assets/icons
+!src/assets/favicon.ico

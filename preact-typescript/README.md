@@ -4,7 +4,7 @@ This project was bootstrapped with [Preact CLI](https://github.com/preactjs/prea
 
 In the project directory, you can run:
 
-```
+```sh
 npm install
 npm run dev
 ```
@@ -15,7 +15,7 @@ This will install dependencies and then start up a development server on [localh
 
 To install calcite components, first run:
 
-```
+```sh
 npm install --save @esri/calcite-components
 ```
 
@@ -40,18 +40,17 @@ import '@esri/calcite-components/dist/calcite/calcite.css';
 
 The icon and nls assets must be copied over to the assets folder manually. A `copy` script has been created to make this process easier:
 
-```
+```sh
 npm run copy
 ```
 
 This will copy the JSON assets required by the icon component to your project's `assets` directory.
 
-
 ## Using TypeScript
 
 When you use calcite-components tags in your `tsx` files, you'll get an error when you try to use a custom element tag. To make TypeScript aware of calcite-components (and their prop types) you must also add a file to your `tsconfig.json`:
 
-```
+```json
 "files": [
   "node_modules/@esri/calcite-components/dist/types/preact.d.ts"
 ],

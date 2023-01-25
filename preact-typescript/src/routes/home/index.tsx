@@ -8,7 +8,7 @@ const Home: FunctionalComponent = () => {
             <p>We even have support for TypeScript!</p>
             <calcite-icon icon="banana"></calcite-icon>
             <calcite-dropdown oncalciteDropdownClose={() => console.log("closing dropdown")}>
-                <calcite-button slot="dropdown-trigger">Sort</calcite-button>
+                <calcite-button slot="trigger">Sort</calcite-button>
                 <calcite-dropdown-group>
                     <calcite-dropdown-item>Relevance</calcite-dropdown-item>
                     <calcite-dropdown-item>Date modified</calcite-dropdown-item>
