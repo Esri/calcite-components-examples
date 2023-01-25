@@ -1,28 +1,30 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "lib": [
-      "dom",
-      "ES2021"
-    ],
+    "target": "ESNext",
     "module": "ESNext",
-    "allowJs": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "strict": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true,
-    "declaration": false,
-    "esModuleInterop": true
+    "jsxFragmentFactory": "Fragment",
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "react": [
+        "./node_modules/preact/compat"
+      ],
+      "react-dom": [
+        "./node_modules/preact/compat"
+      ]
+    }
   },
+  "include": [
+    "src/**/*"
+  ],
   "files": [
     "node_modules/@esri/calcite-components/dist/types/preact.d.ts"
-  ],
-  "include": [
-    "src/**/*.tsx",
-    "src/**/*.ts"
   ]
 }

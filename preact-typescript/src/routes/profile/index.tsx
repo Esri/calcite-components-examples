@@ -1,44 +1,33 @@
-import { FunctionalComponent, h } from "preact";
-import { useEffect, useState } from "preact/hooks";
-import * as style from "./style.css";
+import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 
 interface Props {
-    user: string;
+	user: string;
 }
 
-const Profile: FunctionalComponent<Props> = (props: Props) => {
-    const { user } = props;
-    const [time, setTime] = useState<number>(Date.now());
-    const [count, setCount] = useState<number>(0);
+// Note: `user` comes from the URL, courtesy of our router
+const Profile = ({ user }: Props) => {
+	const [time, setTime] = useState<number>(Date.now());
+	const [count, setCount] = useState<number>(10);
 
-    // gets called when this route is navigated to
-    useEffect(() => {
-        const timer = window.setInterval(() => setTime(Date.now()), 1000);
+	useEffect(() => {
+		let timer = setInterval(() => setTime(Date.now()), 1000);
+		return () => clearInterval(timer);
+	}, []);
 
-        // gets called just before navigating away from the route
-        return () => {
-            clearInterval(timer);
-        };
-    }, []);
+	return (
+		<div>
+			<h1>Profile: {user}</h1>
+			<p>This is the user profile for a user named {user}.</p>
 
-    // update the current time
-    const increment = () => {
-        setCount(count + 1);
-    };
+			<div>Current time: {new Date(time).toLocaleString()}</div>
 
-    return (
-        <div class={style.profile}>
-            <h1>Profile: {user}</h1>
-            <p>This is the user profile for a user named {user}.</p>
-
-            <div>Current time: {new Date(time).toLocaleString()}</div>
-
-            <p>
-                <button onClick={increment}>Click Me</button> Clicked {count}{" "}
-                times.
-            </p>
-        </div>
-    );
+			<p>
+				<button onClick={() => setCount(count => count + 1)}>Click Me</button>{' '}
+				Clicked {count} times.
+			</p>
+		</div>
+	);
 };
 
 export default Profile;

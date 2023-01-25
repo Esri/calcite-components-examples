@@ -1,6 +1,6 @@
 {
-  "name": "preact-typescript",
-  "short_name": "preact-typescript",
+  "name": "preact_new",
+  "short_name": "preact_new",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
