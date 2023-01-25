@@ -2,7 +2,7 @@
 
 <calcite-button icon-end="banana" {{on "click" (fn (mut this.showModal) true)}}>Open Modal</calcite-button>
 
-<calcite-modal aria-labelledby="modal-title" disable-close-button active={{this.showModal}}>
+<calcite-modal aria-labelledby="modal-title" close-button-disabled open={{this.showModal}}>
   <h3 slot="header" id="modal-title">Are you happy?</h3>
   <div slot="content">
     Because it works!

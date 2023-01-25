@@ -29,7 +29,7 @@ module.exports = function (defaults) {
   // Funnel the calcite static assets into the build assets directory
   let calciteAssetsTree = new Funnel('./node_modules/@esri/calcite-components/dist', {
     srcDir: '/',
-    include: ['calcite/assets/*/*'],
+    include: ['calcite/assets/**'],
     destDir: '/assets'
   });
 
