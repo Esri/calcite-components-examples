@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@web/dev-server": "^0.1.29"
+    "@web/dev-server": "^0.1.35"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.0.0-beta.99"
+    "@esri/calcite-components": "^1.0.3"
   }
 }
