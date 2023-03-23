@@ -70,7 +70,7 @@ The [Webpack example](./webpack/) was built from scratch using Webpack 4.x.
 
 ## License
 
-COPYRIGHT © 2020 Esri
+COPYRIGHT © 2023 Esri
 
 All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
 
