@@ -25,18 +25,6 @@ const getDirectories = async (repo) =>
       });
 
       switch (example) {
-        case 'vue':
-          child.stdin.write(`cd ${example}/vue2\n`);
-          child.stdin.write(installLatestCC);
-          child.stdin.write(`cd ../vue3\n`);
-          child.stdin.write(installLatestCC);
-          break;
-        case 'ember':
-          child.stdin.write(`cd ${example}/ember3\n`);
-          child.stdin.write(installLatestCC);
-          child.stdin.write(`cd ../ember4\n`);
-          child.stdin.write(installLatestCC);
-          break;
         case 'react':
           child.stdin.write(`cd ${example}\n`);
           child.stdin.write(installLatestCCReact);
