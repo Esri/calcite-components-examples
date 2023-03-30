@@ -1,12 +1,12 @@
-declare type Jest26CacheKeyOptions = {
+type Jest26CacheKeyOptions = {
     instrument: boolean;
     rootDir: string;
 };
-declare type Jest26Config = {
+type Jest26Config = {
     instrument: boolean;
     rootDir: string;
 };
-declare type Jest27TransformOptions = {
+type Jest27TransformOptions = {
     config: Jest26Config;
 };
 export declare const jestPreprocessor: {

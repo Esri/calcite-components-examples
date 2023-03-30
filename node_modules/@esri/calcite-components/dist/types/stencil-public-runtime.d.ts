@@ -133,7 +133,7 @@ export interface ListenOptions {
      */
     passive?: boolean;
 }
-export declare type ListenTargetOptions = 'body' | 'document' | 'window';
+export type ListenTargetOptions = 'body' | 'document' | 'window';
 export interface StateDecorator {
     (): PropertyDecorator;
 }
@@ -214,8 +214,8 @@ export declare const State: StateDecorator;
  * https://stenciljs.com/docs/reactive-data#watch-decorator
  */
 export declare const Watch: WatchDecorator;
-export declare type ResolutionHandler = (elm: HTMLElement) => string | undefined | null;
-export declare type ErrorHandler = (err: any, element?: HTMLElement) => void;
+export type ResolutionHandler = (elm: HTMLElement) => string | undefined | null;
+export type ErrorHandler = (err: any, element?: HTMLElement) => void;
 /**
  * `setMode()` is used for libraries which provide multiple "modes" for styles.
  */
@@ -257,6 +257,15 @@ export declare function getAssetPath(path: string): string;
  * @returns the set path
  */
 export declare function setAssetPath(path: string): string;
+/**
+ * Used to specify a nonce value that corresponds with an application's
+ * [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
+ * When set, the nonce will be added to all dynamically created script and style tags at runtime.
+ * Alternatively, the nonce value can be set on a `meta` tag in the DOM head
+ * (<meta name="csp-nonce" content="{ nonce value here }" />) and will result in the same behavior.
+ * @param nonce The value to be used for the nonce attribute.
+ */
+export declare function setNonce(nonce: string): void;
 /**
  * Retrieve a Stencil element for a given reference
  * @param ref the ref to get the Stencil element for
@@ -433,13 +442,57 @@ interface HostAttributes {
     ref?: (el: HTMLElement | null) => void;
     [prop: string]: any;
 }
+/**
+ * Utilities for working with functional Stencil components. An object
+ * conforming to this interface is passed by the Stencil runtime as the third
+ * argument to a functional component, allowing component authors to work with
+ * features like children.
+ *
+ * The children of a functional component will be passed as the second
+ * argument, so a functional component which uses these utils to transform its
+ * children might look like the following:
+ *
+ * ```ts
+ * export const AddClass: FunctionalComponent = (_, children, utils) => (
+ *  utils.map(children, child => ({
+ *    ...child,
+ *    vattrs: {
+ *      ...child.vattrs,
+ *      class: `${child.vattrs.class} add-class`
+ *    }
+ *  }))
+ * );
+ * ```
+ *
+ * For more see the Stencil documentation, here:
+ * https://stenciljs.com/docs/functional-components
+ */
 export interface FunctionalUtilities {
+    /**
+     * Utility for reading the children of a functional component at runtime.
+     * Since the Stencil runtime uses a different interface for children it is
+     * not recommendeded to read the children directly, and is preferable to use
+     * this utility to, for instance, perform a side effect for each child.
+     */
     forEach: (children: VNode[], cb: (vnode: ChildNode, index: number, array: ChildNode[]) => void) => void;
+    /**
+     * Utility for transforming the children of a functional component. Given an
+     * array of children and a callback this will return a list of the results of
+     * passing each child to the supplied callback.
+     */
     map: (children: VNode[], cb: (vnode: ChildNode, index: number, array: ChildNode[]) => ChildNode) => VNode[];
 }
 export interface FunctionalComponent<T = {}> {
     (props: T, children: VNode[], utils: FunctionalUtilities): VNode | VNode[];
 }
+/**
+ * A Child VDOM node
+ *
+ * This has most of the same properties as {@link VNode} but friendlier names
+ * (i.e. `vtag` instead of `$tag$`, `vchildren` instead of `$children$`) in
+ * order to provide a friendlier public interface for users of the
+ * {@link FunctionalUtilities}).
+ */
 export interface ChildNode {
     vtag?: string | number | Function;
     vkey?: string | number;
@@ -486,6 +539,9 @@ export declare function h(sel: any, children: Array<VNode | undefined | null>): 
 export declare function h(sel: any, data: VNodeData | null, text: string): VNode;
 export declare function h(sel: any, data: VNodeData | null, children: Array<VNode | undefined | null>): VNode;
 export declare function h(sel: any, data: VNodeData | null, children: VNode): VNode;
+/**
+ * A virtual DOM node
+ */
 export interface VNode {
     $flags$: number;
     $tag$: string | number | Function;

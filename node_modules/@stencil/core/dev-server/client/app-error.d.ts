@@ -3,7 +3,7 @@ interface AppErrorData {
     buildResults: any;
     openInEditor?: OpenInEditorCallback;
 }
-declare type OpenInEditorCallback = (data: {
+type OpenInEditorCallback = (data: {
     file: string;
     line: number;
     column: number;

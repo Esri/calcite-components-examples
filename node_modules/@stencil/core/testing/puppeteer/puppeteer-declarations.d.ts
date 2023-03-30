@@ -7,7 +7,7 @@ import type { ClickOptions, HTTPResponse as PuppeteerHTTPResponse, Page, Screens
  * migrate to a newer minor version of Stencil without requiring a Puppeteer upgrade/major version of Stencil. This type
  * should be removed as a part of the Stencil 3.0 release.
  */
-export declare type HTTPResponse = PuppeteerHTTPResponse;
+export type HTTPResponse = PuppeteerHTTPResponse;
 /**
  * These types help with declaration merging as a part of Stencil's migration from Puppeteer v5.4.3 to v10.0.0. In
  * v10.0.0, `WaitForOptions` is a renamed version of `NavigationOptions` from v5.4.3, who has had its type hierarchy
@@ -31,7 +31,7 @@ declare module 'puppeteer' {
  * This type was once exported by Puppeteer, but has since moved to an object literal in (Puppeteer’s) native types.
  * Re-create it here as a named type to use across multiple Stencil-related testing files.
  */
-export declare type PageCloseOptions = {
+export type PageCloseOptions = {
     runBeforeUnload?: boolean;
 };
 export interface NewE2EPageOptions extends WaitForOptions {
@@ -40,8 +40,8 @@ export interface NewE2EPageOptions extends WaitForOptions {
     failOnConsoleError?: boolean;
     failOnNetworkError?: boolean;
 }
-declare type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
-declare type PuppeteerPage = Omit<Page, 'bringToFront' | 'browser' | 'screenshot' | 'emulate' | 'emulateMedia' | 'frames' | 'goBack' | 'goForward' | 'isClosed' | 'mainFrame' | 'pdf' | 'reload' | 'target' | 'title' | 'viewport' | 'waitForNavigation' | 'screenshot' | 'workers' | 'addListener' | 'prependListener' | 'prependOnceListener' | 'removeAllListeners' | 'setMaxListeners' | 'getMaxListeners' | 'listeners' | 'rawListeners' | 'emit' | 'eventNames' | 'listenerCount' | '$x' | 'waitForXPath'>;
+type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+type PuppeteerPage = Omit<Page, 'bringToFront' | 'browser' | 'screenshot' | 'emulate' | 'emulateMedia' | 'frames' | 'goBack' | 'goForward' | 'isClosed' | 'mainFrame' | 'pdf' | 'reload' | 'target' | 'title' | 'viewport' | 'waitForNavigation' | 'screenshot' | 'workers' | 'addListener' | 'prependListener' | 'prependOnceListener' | 'removeAllListeners' | 'setMaxListeners' | 'getMaxListeners' | 'listeners' | 'rawListeners' | 'emit' | 'eventNames' | 'listenerCount' | '$x' | 'waitForXPath'>;
 export interface PageDiagnostic {
     type: 'error' | 'pageerror' | 'requestfailed';
     message?: string;
@@ -401,7 +401,7 @@ export interface E2EElementInternal extends E2EElement {
     e2eRunActions(): Promise<unknown>;
     e2eSync(): Promise<void>;
 }
-export declare type FindSelector = string | FindSelectorOptions;
+export type FindSelector = string | FindSelectorOptions;
 export interface FindSelectorOptions {
     /**
      * Finds an element with text content matching this
