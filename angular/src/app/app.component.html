@@ -1,3 +1,5 @@
-<h1>Hello Angular! <calcite-icon icon="banana"></calcite-icon></h1>
-<calcite-date-picker></calcite-date-picker>
-<calcite-button>My Button</calcite-button>
+<h1>Hello {{title}}! <calcite-icon icon="banana"></calcite-icon></h1>
+
+<calcite-combobox placeholder="Select a field" label="Select a field" (calciteComboboxChange)="logSelectedFields($event)">
+  <calcite-combobox-item *ngFor="let field of fields"  [value]="field.value" [textLabel]="field.displayText"></calcite-combobox-item>
+</calcite-combobox>
