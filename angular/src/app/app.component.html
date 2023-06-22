@@ -1,5 +1,5 @@
 <h1>Hello {{title}}! <calcite-icon icon="banana"></calcite-icon></h1>
 
 <calcite-combobox placeholder="Select a field" label="Select a field" (calciteComboboxChange)="logSelectedFields($event)">
-  <calcite-combobox-item *ngFor="let field of fields"  [value]="field.value" [textLabel]="field.displayText"></calcite-combobox-item>
+  <calcite-combobox-item *ngFor="let field of fields" [value]="field.value" [textLabel]="field.displayText"></calcite-combobox-item>
 </calcite-combobox>
