@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "rollup-plugin-copy": "^3.4.0",
-    "vite": "^4.0.4"
+    "vite": "^4.0.5"
   },
   "dependencies": {
     "@esri/calcite-components": "^1.4.3"
