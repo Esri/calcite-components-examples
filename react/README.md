@@ -27,7 +27,7 @@ This package includes the compatible version of the main component library as a 
 
 ## Use
 
-[Custom Elements](https://stenciljs.com/docs/custom-elements) is the recomended build when using frontend frameworks, such as React. To use this build, you will need to set the path to the `calcite-components` assets. You can either use local assets, which will be explained in a subsequent step, or assets hosted on a CDN. This example uses local assets.
+[Custom Elements](https://stenciljs.com/docs/custom-elements) is the recommended build when using frontend frameworks, such as React. To use this build, you will need to set the path to the `calcite-components` assets. You can either use local assets, which will be explained in a subsequent step, or assets hosted on a CDN. This example uses local assets.
 
 ```jsx
 import { setAssetPath } from '@esri/calcite-components/dist/components';
@@ -38,12 +38,9 @@ setAssetPath(window.location.href);
 // setAssetPath("https://unpkg.com/@esri/calcite-components/dist/calcite/assets");
 ```
 
-Next, you need to import each component you use from the standard `calcite-component` package's build. This will automatically define the custom elements on the window. Then import the same components from `calcite-components-react`.
+Next, you need to import each component you use from `calcite-components-react`. This will automatically define the custom elements on the browser.
 
 ```jsx
-import '@esri/calcite-components/dist/components/calcite-button';
-import '@esri/calcite-components/dist/components/calcite-icon';
-import '@esri/calcite-components/dist/components/calcite-slider';
 import {
   CalciteButton,
   CalciteIcon,
