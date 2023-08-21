@@ -11,7 +11,7 @@ const Profile = ({ user }: Props) => {
   const [count, setCount] = useState<number>(10);
 
   useEffect(() => {
-    let timer = setInterval(() => setTime(Date.now()), 1000);
+    const timer = setInterval(() => setTime(Date.now()), 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -23,7 +23,7 @@ const Profile = ({ user }: Props) => {
       <div>Current time: {new Date(time).toLocaleString()}</div>
 
       <p>
-        <button onClick={() => setCount((count) => count + 1)}>Click Me</button>{' '}
+        <calcite-button onClick={() => setCount((count) => count + 1)}>Click Me</calcite-button>{' '}
         Clicked {count} times.
       </p>
     </div>
