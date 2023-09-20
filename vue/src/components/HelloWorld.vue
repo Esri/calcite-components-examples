@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     datePickerRangeChangeHandler(event) {
-      console.log('datePickerRangeChangeHandler', event.detail);
+      console.log('datePickerRangeChangeHandler', event.target.value);
     }
   },
   directives: {
