@@ -16,7 +16,7 @@ jobs:
       - name: submit pull request
         uses: peter-evans/create-pull-request@v3
         with:
-          base: master
+          base: main
           branch: action/bump-examples
           commit-message: 'build(deps): update calcite components version'
           token: ${{ secrets.GITHUB_TOKEN }}
