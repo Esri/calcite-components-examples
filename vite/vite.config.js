@@ -1,14 +1,21 @@
+import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import copy from 'rollup-plugin-copy';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   plugins: [
-    copy({
-      // copy over the calcite-components assets
+    viteStaticCopy({
       targets: [
         {
-          src: 'node_modules/@esri/calcite-components/dist/calcite/assets/',
-          dest: 'public/'
+          src: resolve(
+            'node_modules',
+            '@esri',
+            'calcite-components',
+            'dist',
+            'calcite',
+            'assets'
+          ),
+          dest: '.'
         }
       ]
     })
