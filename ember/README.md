@@ -129,7 +129,7 @@ module.exports = function (defaults) {
     './node_modules/@esri/calcite-components/dist',
     {
       srcDir: '/',
-      include: ['calcite/assets/*/*'],
+      include: ['calcite/assets/**/*'],
       destDir: '/assets',
     }
   );
