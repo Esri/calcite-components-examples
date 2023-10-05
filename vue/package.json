@@ -10,7 +10,7 @@
     "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.8.0",
+    "@esri/calcite-components": "^1.9.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
