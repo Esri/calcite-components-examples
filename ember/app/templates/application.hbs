@@ -9,6 +9,7 @@
   aria-labelledby='modal-title'
   close-button-disabled
   open={{this.showModal}}
+  {{ on 'calciteModalClose' (fn (mut this.showModal) undefined)}}
 >
   <h3 slot='header' id='modal-title'>Are you happy?</h3>
   <div slot='content'>
@@ -18,7 +19,7 @@
     slot='secondary'
     width='full'
     appearance='outline'
-    {{on 'click' (fn (mut this.showModal) false)}}
+    {{on 'click' (fn (mut this.showModal) undefined)}}
   >
     Cancel
   </calcite-button>
