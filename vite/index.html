@@ -1,27 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calcite Vite</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Calcite Components - Vite</title>
   </head>
+
+  <script type="module" src="/main.js"></script>
   <body>
     <h1>
-      Hello, Vite <calcite-icon icon="banana"></calcite-icon>
+      Hello, Vite
+      <calcite-icon icon="banana"></calcite-icon>
     </h1>
+
     <calcite-date-picker range></calcite-date-picker>
     <calcite-button>My button</calcite-button>
-
-
-
-    <!-- If using the distribution build, comment out the "main.js" file -->
-    <script type="module" src="/main.js"></script>
-
-    <!--
-      If using the distribution build, load the "calcite-dist-build.js" file to use Vite with auto-lazy loaded Calcite Components.
-      @link https://developers.arcgis.com/calcite-design-system/get-started/#distribution
-    -->
-    <!-- <script type="module" src="/calcite-dist-build.js"></script> -->
   </body>
 </html>
