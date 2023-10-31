@@ -5,7 +5,7 @@
 </style>
 
 <div *ngIf="isLoading; else content">
-  <calcite-loader></calcite-loader>
+  <calcite-loader label="Loading..."></calcite-loader>
 </div>
 
 <ng-template #content>
@@ -14,7 +14,12 @@
     <calcite-icon icon="banana"></calcite-icon>
   </h1>
 
-  <calcite-slider min="1" max="100" [value]="sliderValue" (calciteSliderInput)="onSliderInput($event)"></calcite-slider>
+  <calcite-slider
+    min="1"
+    max="100"
+    [value]="sliderValue"
+    (calciteSliderInput)="onSliderInput($event)"
+  ></calcite-slider>
 
   <p>The slider currently has a value of {{ sliderValue }}.</p>
 
