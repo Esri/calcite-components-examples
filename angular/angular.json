@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular": {
+    "calcite-components-angular-example": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,17 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular",
+            "outputPath": "dist/calcite-components-angular-example",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*.json",
-                "input": "./node_modules/@esri/calcite-components/dist/calcite/assets/",
-                "output": "./assets/"
-              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -39,19 +30,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "maximumWarning": "3mb",
+                  "maximumError": "10mb"
                 }
               ],
               "outputHashing": "all"
@@ -71,10 +56,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular:build:production"
+              "browserTarget": "calcite-components-angular-example:build:production"
             },
             "development": {
-              "browserTarget": "angular:build:development"
+              "browserTarget": "calcite-components-angular-example:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,22 +67,15 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular:build"
+            "browserTarget": "calcite-components-angular-example:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
             "assets": [
-              {
-                "glob": "**/*.json",
-                "input": "./node_modules/@esri/calcite-components/dist/calcite/assets/",
-                "output": "./assets/"
-              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -107,6 +85,5 @@
         }
       }
     }
-  },
-  "defaultProject": "angular"
+  }
 }
