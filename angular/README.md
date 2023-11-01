@@ -28,7 +28,7 @@ Import the global stylesheet into your app (only do this once):
 
 ```css
 /* src/styles.css */
-@import "@esri/calcite-components/dist/calcite/calcite.css";
+@import '@esri/calcite-components/dist/calcite/calcite.css';
 ```
 
 ### Define the custom elements
@@ -37,8 +37,8 @@ The Angular wrapper components must use [Calcite Component's Distribution build]
 
 ```ts
 // src/main.ts
-import { defineCustomElements } from "@esri/calcite-components/dist/loader";
-defineCustomElements(window, { resourcesUrl: "./assets" });
+import { defineCustomElements } from '@esri/calcite-components/dist/loader';
+defineCustomElements(window, { resourcesUrl: './assets' });
 ```
 
 ### Use the components
@@ -47,16 +47,16 @@ Add `CalciteComponentsModule` to the imports of your Angular component's module 
 
 ```ts
 // src/app/app.module.ts
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { CalciteComponentsModule } from "@esri/calcite-components-angular";
-import { AppComponent } from "./app.component";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CalciteComponentsModule } from '@esri/calcite-components-angular';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, CalciteComponentsModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
@@ -65,12 +65,17 @@ Calcite Components can now be used in your application like any other Angular co
 
 ```html
 <!-- app.component.html -->
-<calcite-slider min="1" max="100" [value]="sliderValue" (calciteSliderInput)="onSliderInput($event)"></calcite-slider>
+<calcite-slider
+  min="1"
+  max="100"
+  [value]="sliderValue"
+  (calciteSliderInput)="onSliderInput($event)"
+></calcite-slider>
 ```
 
 ## License
 
-COPYRIGHT © 2021 Esri
+COPYRIGHT © 2023 Esri
 
 All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
 
