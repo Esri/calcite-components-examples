@@ -68,10 +68,6 @@ Calcite Components can now be used in your application like any other Angular co
 <calcite-slider min="1" max="100" [value]="sliderValue" (calciteSliderInput)="onSliderInput($event)"></calcite-slider>
 ```
 
-## Contributing
-
-We welcome contributions to this project. See the main [calcite-components CONTRIBUTING.md](../../../../CONTRIBUTING.md) for an overview of contribution guidelines.
-
 ## License
 
 COPYRIGHT © 2021 Esri
