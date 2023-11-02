@@ -1,5 +1,5 @@
 {
-  "name": "angular",
+  "name": "calcite-angular-starter",
   "private": true,
   "scripts": {
     "ng": "ng",
