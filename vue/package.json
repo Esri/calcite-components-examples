@@ -1,6 +1,5 @@
 {
-  "name": "vue3",
-  "version": "0.0.0",
+  "name": "calcite-vue-starter",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -10,7 +9,7 @@
     "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.9.1",
+    "@esri/calcite-components": "^1.10.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {

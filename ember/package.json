@@ -1,11 +1,6 @@
 {
-  "name": "ember4",
-  "version": "0.0.0",
+  "name": "calcite-ember-starter",
   "private": true,
-  "description": "Small description for ember4 goes here",
-  "repository": "",
-  "license": "MIT",
-  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -25,7 +20,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
-    "@esri/calcite-components": "^1.9.1",
+    "@esri/calcite-components": "^1.10.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "babel-eslint": "^10.1.0",
