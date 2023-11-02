@@ -1,8 +1,6 @@
 {
+  "name": "calcite-preact-starter",
   "private": true,
-  "name": "preact_new",
-  "version": "0.0.0",
-  "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build --no-prerender",
     "serve": "sirv build --cors --single",

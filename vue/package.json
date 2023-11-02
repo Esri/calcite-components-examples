@@ -1,6 +1,5 @@
 {
-  "name": "vue3",
-  "version": "0.0.0",
+  "name": "calcite-vue-starter",
   "private": true,
   "scripts": {
     "dev": "vite",

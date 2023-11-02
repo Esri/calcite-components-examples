@@ -1,5 +1,5 @@
 {
-  "name": "rollup-starter-app",
+  "name": "calcite-rollup-starter",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",

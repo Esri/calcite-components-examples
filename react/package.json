@@ -1,6 +1,5 @@
 {
-  "name": "react-app",
-  "version": "0.1.0",
+  "name": "calcite-react-starter",
   "private": true,
   "dependencies": {
     "@esri/calcite-components-react": "^1.10.0",

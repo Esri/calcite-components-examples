@@ -1,6 +1,6 @@
 {
-  "name": "calcite-vite",
-  "version": "0.0.0",
+  "name": "calcite-vite-starter",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
