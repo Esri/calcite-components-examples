@@ -1,6 +1,6 @@
 {
   "name": "angular",
-  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
@@ -18,7 +17,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@esri/calcite-components": "^1.9.1",
+    "@esri/calcite-components": "^1.10.0",
     "@types/sortablejs": "^1.10.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

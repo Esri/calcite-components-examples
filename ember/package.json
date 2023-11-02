@@ -1,11 +1,6 @@
 {
-  "name": "ember4",
-  "version": "0.0.0",
+  "name": "calcite-ember-starter",
   "private": true,
-  "description": "Small description for ember4 goes here",
-  "repository": "",
-  "license": "MIT",
-  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"

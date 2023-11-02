@@ -1,6 +1,6 @@
 {
-  "name": "calcite-vite",
-  "version": "0.0.0",
+  "name": "calcite-vite-starter",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +11,6 @@
     "vite-plugin-static-copy": "^0.17.0"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.9.1"
+    "@esri/calcite-components": "^1.10.0"
   }
 }
