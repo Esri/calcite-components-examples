@@ -1,8 +1,6 @@
 {
+  "name": "calcite-preact-starter",
   "private": true,
-  "name": "preact_new",
-  "version": "0.0.0",
-  "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build --no-prerender",
     "serve": "sirv build --cors --single",
@@ -23,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.9.1",
+    "@esri/calcite-components": "^1.10.0",
     "preact": "^10.10.0",
     "preact-render-to-string": "^5.2.1",
     "preact-router": "^3.2.1"

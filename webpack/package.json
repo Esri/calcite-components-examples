@@ -1,16 +1,13 @@
 {
-  "name": "webpack-calcite",
-  "version": "1.0.0",
-  "description": "basic webpack config",
+  "name": "calcite-webpack-starter",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@esri/calcite-components": "^1.9.1"
+    "@esri/calcite-components": "^1.10.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
