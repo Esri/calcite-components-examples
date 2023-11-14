@@ -1,101 +1,88 @@
 # Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+This examples use [`@esri/calcite-components-angular`](https://www.npmjs.com/package/@esri/calcite-components-angular), which provides Angular wrappers for Calcite Components.
 
-## Installation
+## Usage
 
-First, install dependencies with
+### Install the packages
 
-```
-npm install
-```
+Install the Angular components along with [`@esri/calcite-components`](https://www.npmjs.com/package/@esri/calcite-components):
 
-After that, you can run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Calcite Components with Angular
-
-To install the calcite-components in an Angular project, run:
-
-```
-npm install --save @esri/calcite-components
+```sh
+npm install @esri/calcite-components @esri/calcite-components-angular
 ```
 
-### Dependencies
+Make sure the versions of the two packages remain the same when updating your dependencies.
 
-#### sortablejs
+### Copy local assets
 
-To install the sortablejs dependency in an Angular project, run:
+Calcite Components rely on assets being available at a particular path. If using assets locally, you'll need to copy these over to your `src` directory. This example has a `copy` npm script, which will automatically run after installing dependencies.
 
+```sh
+cp -r node_modules/@esri/calcite-components/dist/calcite/assets/ ./src/assets/
 ```
-npm install --save @types/sortablejs
+
+### Import the stylesheet
+
+Import the global stylesheet into your app (only do this once):
+
+```css
+/* src/styles.css */
+@import '@esri/calcite-components/dist/calcite/calcite.css';
 ```
 
-### Custom Components
+### Define the custom elements
 
-To use custom components in Angular, you have to tell the module to include the schema for custom elements. Fortunately, Angular makes this pretty easy. Add something like the following to your `app.module.ts` file:
+The Angular wrapper components must use [Calcite Component's Distribution build](https://developers.arcgis.com/calcite-design-system/get-started/#distribution):
+
+```ts
+// src/main.ts
+import { defineCustomElements } from '@esri/calcite-components/dist/loader';
+defineCustomElements(window, { resourcesUrl: './assets' });
+```
+
+### Use the components
+
+Add `CalciteComponentsModule` to the imports of your Angular component's module file:
 
 ```ts
 // src/app/app.module.ts
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CalciteComponentsModule } from '@esri/calcite-components-angular';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [AppComponent],
+  imports: [BrowserModule, CalciteComponentsModule],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
 
-Next, import and call `setAssetPath`:
+Calcite Components can now be used in your application like any other Angular component!
 
-```ts
-// src/main.ts
-import { setAssetPath } from '@esri/calcite-components/dist/components';
-setAssetPath(location.href);
+```html
+<!-- app.component.html -->
+<calcite-slider
+  min="1"
+  max="100"
+  [value]="sliderValue"
+  (calciteSliderInput)="onSliderInput($event)"
+></calcite-slider>
 ```
 
-### Allow Synthetic Default Imports
+## License
 
-Allow default imports from modules with no default export. This does not affect the code emit, just typechecking.
+COPYRIGHT © 2023 Esri
 
-To enable set the `allowedSyntheticDefaultImports` property to `true` in the `compilerOptions` object.
+All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
 
-```
-// tsconfig.json
-  "compilerOptions": {
-      ...
-      "allowSyntheticDefaultImports": true,
-      ...
-  }
-```
+This material is licensed for use under the Esri Master License Agreement (MLA), and is bound by the terms of that agreement. You may redistribute and use this code without modification, provided you adhere to the terms of the MLA and include this copyright notice.
 
-### Import Calcite Components
+See use restrictions at <http://www.esri.com/legal/pdfs/mla_e204_e300/english>
 
-Now that everything is set up, you can import the components:
+For additional information, contact: Environmental Systems Research Institute, Inc. Attn: Contracts and Legal Services Department 380 New York Street Redlands, California, USA 92373 USA
 
-```ts
-// src/app/app.component.ts
-import '@esri/calcite-components/dist/components/calcite-button';
-import '@esri/calcite-components/dist/components/calcite-icon';
-import '@esri/calcite-components/dist/components/calcite-date-picker';
-```
-
-## Adding the CSS
-
-Calcite Components has a single stylesheet which provides CSS variables for colors. You can import it as a CSS import in `styles.css`:
-
-```css
-/* styles.css */
-@import '@esri/calcite-components/dist/calcite/calcite.css';
-```
-
-## Adding the assets
-
-There are a few static assets (calendar nls data, icon paths) used by calcite components. You can add the following to `architect.build.options.assets` in the `angular.json` file to serve these assets directly from the calcite components library in `node_modules`:
-
-```
-// angular.json
-{
-  "glob": "**/*.json",
-  "input": "./node_modules/@esri/calcite-components/dist/calcite/assets/",
-  "output": "./assets/"
-}
-```
+email: <contracts@esri.com>

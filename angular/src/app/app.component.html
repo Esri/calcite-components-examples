@@ -1,5 +1,21 @@
-<h1>Hello {{title}}! <calcite-icon icon="banana"></calcite-icon></h1>
+<div *ngIf="isLoading; else content">
+  <calcite-loader label="Loading..."></calcite-loader>
+</div>
 
-<calcite-combobox placeholder="Select a field" label="Select a field" (calciteComboboxChange)="logSelectedFields($event)">
-  <calcite-combobox-item *ngFor="let field of fields" [value]="field.value" [textLabel]="field.displayText"></calcite-combobox-item>
-</calcite-combobox>
+<ng-template #content>
+  <h1>
+    Calcite Components Angular Example
+    <calcite-icon icon="banana"></calcite-icon>
+  </h1>
+
+  <calcite-slider
+    min="1"
+    max="100"
+    [value]="sliderValue"
+    (calciteSliderInput)="onSliderInput($event)"
+  ></calcite-slider>
+
+  <p>The slider currently has a value of {{ sliderValue }}.</p>
+
+  <calcite-button (click)="clearSliderValue()">Clear</calcite-button>
+</ng-template>

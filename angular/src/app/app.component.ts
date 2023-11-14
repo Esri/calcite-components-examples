@@ -1,57 +1,37 @@
-import { Component } from '@angular/core';
-
-// Calcite Components
-import '@esri/calcite-components/dist/components/calcite-icon';
-import '@esri/calcite-components/dist/components/calcite-combobox';
-import '@esri/calcite-components/dist/components/calcite-combobox-item';
-
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title: string = "Angular";
+export class AppComponent implements OnInit, OnDestroy {
+  title = 'calcite-components-angular-example';
+  sliderValue = 50;
 
-  fields = [
-    {
-      "displayText": "Natural Resources",
-      "value": "natural-resources"
-    },
-    {
-      "displayText": "Agriculture",
-      "value": "agriculture"
-    },
-    {
-      "displayText": "Forestry",
-      "value": "forestry"
-    },
-    {
-      "displayText": "Mining",
-      "value": "mining"
-    },
-    {
-      "displayText": "Business",
-      "value": "business"
-    },
-    {
-      "displayText": "Education",
-      "value": "education"
-    },
-    {
-      "displayText": "Utilities",
-      "value": "utilities"
-    },
-    {
-      "displayText": "Transportation",
-      "value": "transportation"
-    }
-  ];
+  public isLoading: boolean = true;
 
-  logSelectedFields(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    console.log(value);
+  ngOnInit() {
+    this.fetch();
   }
 
+  ngOnDestroy(): void {
+    this.clearSliderValue();
+  }
+
+  async fetch() {
+    await new Promise((r) => setTimeout(r, 2000));
+    this.isLoading = false;
+  }
+
+  onSliderInput(event: Event) {
+    const value = (event.target as HTMLCalciteSliderElement).value;
+    if (typeof value === 'number') {
+      this.sliderValue = value;
+    }
+  }
+
+  clearSliderValue() {
+    this.sliderValue = 0;
+  }
 }
