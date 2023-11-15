@@ -4,15 +4,13 @@ This examples use [`@esri/calcite-components-angular`](https://www.npmjs.com/pac
 
 ## Usage
 
-### Install the packages
-
-Install the Angular components along with [`@esri/calcite-components`](https://www.npmjs.com/package/@esri/calcite-components):
+### Install the package
 
 ```sh
 npm install @esri/calcite-components @esri/calcite-components-angular
 ```
 
-Make sure the versions of the two packages remain the same when updating your dependencies.
+This package includes the compatible version of the main component library as a dependency, so no need to install `@esri/calcite-components` separately.
 
 ### Copy local assets
 
