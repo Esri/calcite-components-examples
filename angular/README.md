@@ -7,7 +7,7 @@ This examples use [`@esri/calcite-components-angular`](https://www.npmjs.com/pac
 ### Install the package
 
 ```sh
-npm install @esri/calcite-components @esri/calcite-components-angular
+npm install @esri/calcite-components-angular
 ```
 
 This package includes the compatible version of the main component library as a dependency, so no need to install `@esri/calcite-components` separately.
