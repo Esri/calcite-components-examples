@@ -11,8 +11,11 @@ import '@esri/calcite-components/dist/calcite/calcite.css';
 import "./App.css";
 
 function App() {
-  const [sliderValue, setSliderValue] = useState(50);
-  const [histogramSliderValue, setHistogramSliderValue] = useState(60);
+  const [sliderValue, setSliderValue] = useState(30);
+  const [histogramSliderValue, setHistogramSliderValue] = useState(40);
+  const [colorsHistogramSliderValue, setColorsHistogramSliderValue] = useState(50);
+  const [rangeHistogramMinValue, setRangeHistogramMinValue] = useState(50);
+  const [rangeHistogramMaxValue, setRangeHistogramMaxValue] = useState(80);
   const histogram = [
     [0, 0],
     [20, 12],
@@ -21,6 +24,8 @@ function App() {
     [80, 10],
     [100, 0],
   ];
+  const colors = ["violet", "blue", "cyan", "green", "yellow", "orange", "red"];
+  const colorStops = colors.map((color, i) => ({ offset: (1 / (colors.length - 1)) * i, color }));
 
   return (
     <>
@@ -35,7 +40,7 @@ function App() {
           <div className='sliders'>
             {/* Basic slider */}
             <div>
-              <p>Basic slider - Value: <span className='value'>{sliderValue}</span></p>
+              <p>Basic slider - value: <span className='value'>{sliderValue}</span></p>
               <CalciteSlider
                 min="0"
                 max="100"
@@ -45,11 +50,10 @@ function App() {
               />
               <CalciteButton onClick={(e) => setSliderValue(0)}>Reset slider</CalciteButton>
             </div>
-            {/* Slider with histogram */}
+            {/* Slider histogram */}
             <div>
-              <p>Slider with histogram - Value: <span className='value'>{histogramSliderValue}</span></p>
+              <p>Slider histogram - value: <span className='value'>{histogramSliderValue}</span></p>
               <CalciteSlider 
-                className="react-histogram" 
                 min="0" 
                 max="100" 
                 step="1" 
@@ -57,6 +61,42 @@ function App() {
                 value={histogramSliderValue} 
                 onCalciteSliderInput={(e) => setHistogramSliderValue(e.target.value)}
                 histogram={histogram}
+              />
+              <CalciteButton onClick={(e) => setHistogramSliderValue(0)}>Reset slider</CalciteButton>
+            </div>
+            {/* Slider histogram with color stops*/}
+            <div>
+              <p>Slider histogram with color stops - value: <span className='value'>{colorsHistogramSliderValue}</span></p>
+              <CalciteSlider 
+                min="0" 
+                max="100" 
+                step="1" 
+                scale="m" 
+                value={colorsHistogramSliderValue} 
+                onCalciteSliderInput={(e) => setColorsHistogramSliderValue(e.target.value)}
+                histogram={histogram}
+                histogramStops={colorStops}
+              />
+              <CalciteButton onClick={(e) => setColorsHistogramSliderValue(0)}>Reset slider</CalciteButton>
+            </div>
+            {/* Slider histogram with color stops*/}
+            <div>
+              <p>Slider range histogram with labeled ticks and precise labeled handles - range: <span className='value'>{rangeHistogramMinValue}</span> to <span className='value'>{rangeHistogramMaxValue}</span></p>
+              <CalciteSlider 
+                min="0"
+                max="100"
+                min-value={rangeHistogramMinValue}
+                max-value={rangeHistogramMaxValue}
+                step="10"
+                ticks="10"
+                min-label="Temperature range (lower)"
+                max-label="Temperature range (upper)"
+                label-handles
+                label-ticks
+                precise
+                scale="m" 
+                histogram={histogram}
+                onCalciteSliderInput={(e) => {e.target.dragProp === 'minValue' ? setRangeHistogramMinValue(e.target.minValue) : setRangeHistogramMaxValue(e.target.maxValue)}}
               />
               <CalciteButton onClick={(e) => setHistogramSliderValue(0)}>Reset slider</CalciteButton>
             </div>
