@@ -1,3 +1,7 @@
+.app {
+
+}
+
 .header {
   text-align: center;
   display: flex;
@@ -13,9 +17,6 @@
 
 .sliders {
   padding: 2rem 0rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
 }
 
 .value {
