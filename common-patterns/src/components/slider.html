@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Slider</title>
+    <script
+      type="module"
+      src="../../node_modules/@esri/calcite-components/dist/calcite/calcite.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../node_modules/@esri/calcite-components/dist/calcite/calcite.css"
+    />
+    <link rel="stylesheet" href="../styles/slider.css" />
+  </head>
+
+  <body>
+    <calcite-navigation slot="header">
+      <a href="../index.html" class="home-link" slot="logo">
+        <calcite-action scale="l" icon="arrow-left" alignment="center">
+        </calcite-action>
+      </a>
+      <calcite-navigation-logo slot="logo" heading="Slider">
+      </calcite-navigation-logo>
+    </calcite-navigation>
+    <div class="parent">
+      <div class="child right-aligned-text">
+        Slider histogram with color stops
+      </div>
+
+      <div class="child">
+        <calcite-slider
+          min="0"
+          max="100"
+          value="60"
+          step="1"
+          class="js-histogram js-histogram-colors"
+          scale="m"
+        >
+        </calcite-slider>
+      </div>
+    </div>
+  </body>
+  <script>
+    const histogram = [
+      [0, 0],
+      [20, 12],
+      [40, 25],
+      [60, 55],
+      [80, 10],
+      [100, 0]
+    ];
+    [].slice
+      .call(document.querySelectorAll('.js-histogram'))
+      .forEach(function (graphElement) {
+        graphElement.histogram = histogram;
+      });
+
+    const rainbow = [
+      'violet',
+      'blue',
+      'cyan',
+      'green',
+      'yellow',
+      'orange',
+      'red'
+    ];
+    const colorStops = rainbow.map((color, i) => ({
+      offset: (1 / (rainbow.length - 1)) * i,
+      color
+    }));
+    document
+      .querySelectorAll('.js-histogram-colors')
+      .forEach(function (graphElement) {
+        graphElement.histogramStops = colorStops;
+      });
+  </script>
+</html>
