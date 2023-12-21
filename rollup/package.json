@@ -12,7 +12,7 @@
     "serve": "^13.0.2"
   },
   "dependencies": {
-    "@esri/calcite-components": "^1.10.0"
+    "@esri/calcite-components": "^2.1.0"
   },
   "scripts": {
     "build": "rollup -c",

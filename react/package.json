@@ -2,7 +2,7 @@
   "name": "calcite-react-starter",
   "private": true,
   "dependencies": {
-    "@esri/calcite-components-react": "^1.10.0",
+    "@esri/calcite-components-react": "^2.1.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
