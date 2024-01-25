@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Calcite Design System repository
+    url: https://github.com/Esri/calcite-design-system/issues/new/choose
+    about: Report bugs or request enhancements in the Calcite Design System GitHub repo.
+  - name: Esri Support
+    url: https://support.esri.com/en/contact-tech-support
+    about: Report bugs in released versions of Calcite Design System, and request enhancements.
+  - name: Esri Community
+    url: https://community.esri.com/t5/calcite-design-system/ct-p/calcite-design-system
+    about: Ask questions, share ideas, and collaborate with others on Calcite Design System.

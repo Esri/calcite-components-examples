@@ -1,6 +1,6 @@
 # Calcite Components Examples
 
-Working example applications utilizing [calcite-components](https://github.com/Esri/calcite-components). Each folder within this repository is its own mini application demonstrating integration of Calcite Components with other technologies and tooling.
+Working example applications utilizing [Calcite Design System](https://github.com/Esri/calcite-design-system). Each folder within this repository is its own mini application demonstrating integration of Calcite Components with other technologies and tooling.
 
 Most frameworks provide a CLI tool to quickly start up a repo. If available, these tools are used to create the examples to ensure they are colloquial to the framework in question. After a starter project is scaffolded up, calcite-components are installed and some general steps are taken:
 
@@ -9,6 +9,12 @@ Most frameworks provide a CLI tool to quickly start up a repo. If available, the
 3. Ensure Calcite Components' assets get copied into the project (allows the `calcite-icon` component to work)
 
 This repository will change over time as new best-practices are established and framework integrations are improved.
+
+**Troubleshooting**
+
+To troubleshoot an error or issue with the examples, please visit [Esri Support](https://support.esri.com/en/contact-tech-support), or visit [Calcite's Community](https://community.esri.com/t5/calcite-design-system/ct-p/calcite-design-system) to ask questions, share ideas, and collaborate with other community members on Calcite Design System.
+
+To report bugs or request enhancements, navigate to [Calcite Design System's GitHub repository](https://github.com/Esri/calcite-design-system/issues/new/choose).
 
 ## Angular
 
