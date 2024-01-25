@@ -17,6 +17,8 @@ const getDirectories = async (repo) =>
     const installLatestCC = 'npm i @esri/calcite-components@latest\n';
     const installLatestCCReact =
       'npm i @esri/calcite-components-react@latest\n';
+    const installLatestCCAngular =
+      'npm i @esri/calcite-components-angular@latest\n';
 
     examples.forEach((example) => {
       const child = spawn('bash');
@@ -28,6 +30,10 @@ const getDirectories = async (repo) =>
         case 'react':
           child.stdin.write(`cd ${example}\n`);
           child.stdin.write(installLatestCCReact);
+          break;
+        case 'angular':
+          child.stdin.write(`cd ${example}\n`);
+          child.stdin.write(installLatestCCAngular);
           break;
         default:
           child.stdin.write(`cd ${example}\n`);
