@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+    {/* test comment */}
       <h1>
         Hello, React <CalciteIcon icon="banana" />
       </h1>
