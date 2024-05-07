@@ -58,14 +58,16 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: normalizePath(resolve(
-            'node_modules',
-            '@esri',
-            'calcite-components',
-            'dist',
-            'calcite',
-            'assets'
-          )),
+          src: normalizePath(
+            resolve(
+              'node_modules',
+              '@esri',
+              'calcite-components',
+              'dist',
+              'calcite',
+              'assets'
+            )
+          ),
           dest: normalizePath('.')
         }
       ]
@@ -74,4 +76,4 @@ export default defineConfig({
 });
 ```
 
-[vite-plugin-static-copy]:https://github.com/sapphi-red/vite-plugin-static-copy
+[vite-plugin-static-copy]: https://github.com/sapphi-red/vite-plugin-static-copy
