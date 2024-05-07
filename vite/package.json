@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "build-and-serve": "vite build && vite preview --open"
   },
   "devDependencies": {
     "vite": "^5.2.11",
