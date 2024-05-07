@@ -43,25 +43,35 @@ There are a few more steps we need to take so that Vite can successfully bundle 
 To that end, at the top of your config, add the following import:
 
 ```js
-import { defineConfig } from 'vite';
-import copy from 'rollup-plugin-copy';
+import { resolve } from 'node:path';
+import { defineConfig, normalizePath } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 ```
 
 ### Copying Icons
 
-You can use the `rollup-plugin-copy` package to copy Calcite Components' assets to your app:
+You can use the [vite-plugin-static-copy] package to copy Calcite Components' assets to your app:
 
 ```js
 export default defineConfig({
   plugins: [
-    copy({
+    viteStaticCopy({
       targets: [
         {
-          src: 'node_modules/@esri/calcite-components/dist/calcite/assets/',
-          dest: 'public/'
+          src: normalizePath(resolve(
+            'node_modules',
+            '@esri',
+            'calcite-components',
+            'dist',
+            'calcite',
+            'assets'
+          )),
+          dest: normalizePath('.')
         }
       ]
     })
   ]
 });
 ```
+
+[vite-plugin-static-copy]:https://github.com/sapphi-red/vite-plugin-static-copy
