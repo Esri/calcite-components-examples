@@ -74,6 +74,20 @@ npx degit "rollup/rollup-starter-app" [NAME]
 
 The [Webpack example](./webpack/) was built from scratch using Webpack 4.x.
 
+## Visual Studio IntelliSense
+
+Calcite supports IntelliSense in Visual Studio Code. You can quickly add components and their attributes or properties while writing your app. There is also accompanying documentation to help you along the way.
+
+![Calcite IntelliSense in Visual Studio Code](https://user-images.githubusercontent.com/5023024/213829317-32f534fd-6f37-4c10-aa24-f402056ef939.gif)
+
+To setup IntelliSense, add the following to the `.vscode/settings.json` file in your project:
+
+```json
+  "html.customData": [
+    "./node_modules/@esri/calcite-components/dist/extras/vscode-data.json"
+  ]
+```
+
 ## License
 
 COPYRIGHT © 2023 Esri
