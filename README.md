@@ -88,9 +88,11 @@ To setup IntelliSense, add the following to the `.vscode/settings.json` file in 
   ]
 ```
 
+For more detailed information on IntelliSense, visit the [Visual Studio Code IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) documentation.
+
 ## License
 
-COPYRIGHT © 2023 Esri
+COPYRIGHT © 2024 Esri
 
 All rights reserved under the copyright laws of the United States and applicable international laws, treaties, and conventions.
 
