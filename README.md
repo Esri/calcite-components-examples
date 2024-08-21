@@ -1,5 +1,8 @@
 # Calcite Components Examples
 
+> [!IMPORTANT]
+> Updated versions of these examples are now [included](https://github.com/Esri/calcite-design-system/tree/dev/examples/components) in the Calcite Design System monorepo.
+
 Working example applications utilizing [Calcite Design System](https://github.com/Esri/calcite-design-system). Each folder within this repository is its own mini application demonstrating integration of Calcite Components with other technologies and tooling.
 
 Most frameworks provide a CLI tool to quickly start up a repo. If available, these tools are used to create the examples to ensure they are colloquial to the framework in question. After a starter project is scaffolded up, calcite-components are installed and some general steps are taken:
