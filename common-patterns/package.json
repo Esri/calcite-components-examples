@@ -8,7 +8,7 @@
     "start": "npx web-dev-server --open /src/ --node-resolve --watch"
   },
   "dependencies": {
-    "@esri/calcite-components": "^2.1.0"
+    "@esri/calcite-components": "^2.11.1"
   },
   "devDependencies": {
     "@web/dev-server": "^0.4.1"
